@@ -15,6 +15,14 @@ font-family: 'Montserrat', sans-serif;*/
     width: 10rem;
 }
 
+#map {
+    height: 95vh;
+}
+
+footer {
+    height: 5vh;
+}
+
 /*Backgrounds*/
 
 .bgGlassSmoke {
