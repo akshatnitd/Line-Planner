@@ -73,9 +73,13 @@ body {
     height: 95vh;
 }
 
-#interface {
+#leftInterface, #rightInterface {
     height: 75vh;
     margin: 5vh 0;
+}
+
+.height100 {
+    height: 100%
 }
 
 footer {
