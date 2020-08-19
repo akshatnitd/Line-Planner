@@ -205,15 +205,26 @@ the project, maximise coding productivity and minimise mission creep.
 Bootstrap was utilised to provide responsive front-end design via a component library. It is able to provide some
 JavaScript functionality including collapse and accordion section div control. 
 
-### License
+#### License
 
-Bootstrap is released under the MIT License (MIT)
+Bootstrap is released under the [MIT License](https://tldrlegal.com/license/mit-license)
 
 A copy of this license is provided in Bootstraps GitHub Project: https://github.com/twbs/bootstrap/blob/v4.5.0/LICENSE
 
 Bootstrap Copyright is as follows: Copyright (c) 2011-2020 Twitter, Inc. Copyright (c) 2011-2020 The Bootstrap Authors
 
-### JQuery
+### jQuery
+
+jQuery is a JavaScript library designed to make html traversal and manipulation
+much simpler than raw JavaScript, by presenting the author with a wealth of
+simple code and commands which call on much more complex functions. 
+
+jQuery was utilised to improve the targeting of elements and provide some support
+for animation and user interaction where possible. 
+
+#### License 
+
+jQuery is provided under the [MIT License](https://tldrlegal.com/license/mit-license) 
 
 ### Mapbox
 
