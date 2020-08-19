@@ -109,6 +109,11 @@ An opportunity importance vs feasibility assessment was carried out to inform on
 ### Minor Improvements
 
 ### Future Features
+* Ability to handle a variety of file formats. 
+* Ability to save sessions locally or on the server to be loaded again later following closing of the site.
+* Ability to load and create multiple files (plans and boundaries).
+* More advanced drawing options (extending and cropping).
+* Ability to handle, transform a project into a variety of coordinate systems and geodetics. 
 
 ## Technologies Used
 
