@@ -157,6 +157,25 @@ As the site will initially not have more than one page, a navigation bar will no
 
 ### Skeleton
 
+The site will be responsive across all device sizes and utilise Bootstrap 4 breakpoints to achieve this. The site will be easiest to use on lg and above device sizes due to screen real estate and user input options. As Bootstrap is optimised for smaller mobile devices I will create a custom “XXL” breakpoint to accommodate extra large and high definition devices, where XL breakpoint would begin to become oversized and “blown-up”. 
+
+|Bootstrap Breakpoint ID|Minimum Pixel Width|Maximum Pixel Width|
+|-----------------------|-------------------|-------------------|
+|XS - SM|	1px|	767px|
+|MD - LG|	768px|	1199px|
+|XL	|1200px|	2559px|
+|XXL (Custom breakpoint)|	2560px|	Infinite|
+
+Common device sizes are:
+- Mobile Phones (xs-sm Bootstrap sizing)
+- Recreational Tablets (md Bootstrap sizing)
+- Professional Tablets (lg Bootstrap sizing)
+- Laptops and Desktops (XL Bootstrap sizing)
+- TVs, projectors and high definition monitors (XXL Custom sizing)
+
+[Wireframes](assets/docs/wireframes.pdf) were constructed in Basamiq Wireframe 4 in order to provide a design brief for 
+the project, maximise coding productivity and minimise mission creep.
+
 ### Surface
 
 ## Features
