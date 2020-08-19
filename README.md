@@ -2,8 +2,6 @@
 
 ## Contents
 
----
-
 1. UX Design
 2. Features
 3. Technologies Used
@@ -16,8 +14,6 @@
 10. License
 
 ## UX Design
-
----
 
 The Line Planner site was designed around User Experience Design
 Principles. Target users were identified and business and user
@@ -180,8 +176,6 @@ the project, maximise coding productivity and minimise mission creep.
 
 ## Features
 
----
-
 ### Existing Features
 
 ### Minor Improvements
@@ -195,8 +189,6 @@ the project, maximise coding productivity and minimise mission creep.
 - Ability to handle, transform a project into a variety of coordinate systems and geodetics.
 
 ## Technologies Used
-
----
 
 ### Bootstrap 4.5.2
 
@@ -234,9 +226,16 @@ jQuery is provided under the [MIT License](https://tldrlegal.com/license/mit-lic
 
 ### Font Awesome
 
-## Testing
+Font Awesome provides text based icons which can be manipulated and controlled by CSS styling. These were used to prompt user interaction provide visual ques to functionality.
 
----
+#### License
+Icons are licensed under the CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+
+Fonts are licensed under SIL OFL 1.1 https://scripts.sil.org/OFL
+
+Code is licensed under MIT https://opensource.org/licenses/MIT
+
+## Testing
 
 ### Jasmine
 
@@ -252,19 +251,13 @@ jQuery is provided under the [MIT License](https://tldrlegal.com/license/mit-lic
 
 ## Deployment
 
----
-
 ### Current Version
 
 ### Version History
 
 ## User Guide
 
----
-
 ## Credits
-
----
 
 ### Content
 
@@ -274,12 +267,6 @@ jQuery is provided under the [MIT License](https://tldrlegal.com/license/mit-lic
 
 ## Contributing
 
----
-
 ## Support
 
----
-
 ## License
-
----
