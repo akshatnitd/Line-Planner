@@ -223,6 +223,10 @@ jQuery is provided under the [MIT License](https://tldrlegal.com/license/mit-lic
 ### LogoMakr
 
 ### Google Fonts
+Google Fonts offers open source font styling options for personal and commercial use. 2 fonts were used within style.css. One of these fonts was also used within Logomakr to create the site logo.
+
+#### License
+The use of this product was inline with Google API's terms of service https://developers.google.com/terms
 
 ### Font Awesome
 
