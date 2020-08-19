@@ -122,6 +122,38 @@ on the polygons and polylines and these features are exportable in a basic text 
 |Competent surveyor/GIS/CAD technician | I’ve been assigned to a new project that my company has recently been awarded following a successful bid. My project manager has asked me to create a final line plan for the survey acquisition and provided me with the client boundary, along with a file containing the data from the as-bid indicative plan. I’ve quickly been able to load both of these into the propriety acquisition software, make an assessment on its suitability and make any adjustments as required. I’ve now moved onto different parts of the planning and preparation process. |
 
 ### Structure
+As a product designed to be utilised by non-technical operators to produce techincal 
+outputs quickly it is important to make the experience simple and rewarding for the user. 
+The site consists of one page and makes use of collapsing sections which cover over parts 
+of the main content of the page, which is a full-page Map API area. The 
+collapsing sections provide more in-depth interaction such as input forms and 
+file upload/download functions and can be left expanded by the user if desired. Core 
+functionality is provided more permanently over the main map area in the form of 
+simple buttons. A modal automatically appears once the page is loaded to provide 
+the necessary introductory content on site purpose and key instructions. It can be 
+dismissed by the user and brough back at any point via a dedicated button. 
+
+A combination of a Map API, and open source library of geodesy tools provided by 
+[Movable Type Ltd](https://www.movable-type.co.uk/), [Moveable Type GitHub](https://github.com/chrisveness/geodesy), 
+a CSV to JSON converter provided by [Cloudmersive](https://api.cloudmersive.com/docs/convert.asp), 
+JQuery and vanilla Javascript have been used to create the sites functionality. 
+
+User created data is saved within session storage to allow the workspace to be quickly 
+reset. 
+
+Future expansion considerations have also been considered. If the saving of data and the use 
+of multiple projects is to be rolled out on the site then including the use of a login page, 
+and a projects page before reaching the main map workspace would be prudent to ensure client 
+information data security and appropriate organisation. Suitable permanent storage solutions 
+would need to be applied, such as cloud/server/locally based storage. 
+
+The site is designed to be fully responsive and leans on some elements of Bootstrap for 
+this, however it is recommended that a desktop environment is used as the user has a better 
+array of inputs including a keyboard, mouse and greater screen real-estate.  
+The site is more challenging to use on mobile and tablet devices but is fully designed to be
+compatible with these devices. 
+
+As the site will initially not have more than one page, a navigation bar will not be required. 
 
 ### Skeleton
 
