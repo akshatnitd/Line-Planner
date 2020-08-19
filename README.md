@@ -111,65 +111,68 @@ on the polygons and polylines and these features are exportable in a basic text 
   - Some core map manipulation tools presented as hovering buttons over the map.
 
 #### User Stories
-| User | Story |
-|------|-------|
-|Tender coordinator or similar within a hydrographic or aerial survey acquisition company | As a survey tender coordinator, I want to ensure my bid is accurate regarding survey time estimates. I have a tight deadline and cannot wait for support from the GIS/CAD team. I need a reliable indicative line plan that I can easily create myself. The client provided me with a list of coordinates which make up a boundary, and these are in WGS84 latitude and longitude or UTM eastings and northings along with the given zone. The application allowed me to input these coordinates and generate a basic plan despite having little to no experience with CAD or GIS. It also provided me with the distance and duration estimates I need to apply costs to my bid. I was able to create a basic, human readable export which I can provide to the technical team if we win the work. |
-|Sole trading independent remotely piloted aerial vehicle operator. | My expertise is in the safe operation of aerial “drones” and the collection of photogrammetry data. I am not familiar with survey packages and terminology, or the complexities of different coordinate systems and datums. I have little to no GIS/CAD experience and don’t know anyone who does that can support me. My client requires me to run survey lines over an area to collect the required data and I need waypoints to input into my vehicles autopilot system. The client has provided me with the survey area as a list of positions in WGS84 latitude and longitude or UTM eastings and northings along with the given zone. I was able to visualise this area over Google Maps, which I am familiar with, identify from Google satellite imagery any potential obstacles, and produce a line plan which provides start and end coordinates that I can enter into my autopilot. |
-|Competent surveyor/GIS/CAD technician | I’ve been assigned to a new project that my company has recently been awarded following a successful bid. My project manager has asked me to create a final line plan for the survey acquisition and provided me with the client boundary, along with a file containing the data from the as-bid indicative plan. I’ve quickly been able to load both of these into the propriety acquisition software, make an assessment on its suitability and make any adjustments as required. I’ve now moved onto different parts of the planning and preparation process. |
+
+| User                                                                                     | Story                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tender coordinator or similar within a hydrographic or aerial survey acquisition company | As a survey tender coordinator, I want to ensure my bid is accurate regarding survey time estimates. I have a tight deadline and cannot wait for support from the GIS/CAD team. I need a reliable indicative line plan that I can easily create myself. The client provided me with a list of coordinates which make up a boundary, and these are in WGS84 latitude and longitude or UTM eastings and northings along with the given zone. The application allowed me to input these coordinates and generate a basic plan despite having little to no experience with CAD or GIS. It also provided me with the distance and duration estimates I need to apply costs to my bid. I was able to create a basic, human readable export which I can provide to the technical team if we win the work.                                                                                             |
+| Sole trading independent remotely piloted aerial vehicle operator.                       | My expertise is in the safe operation of aerial “drones” and the collection of photogrammetry data. I am not familiar with survey packages and terminology, or the complexities of different coordinate systems and datums. I have little to no GIS/CAD experience and don’t know anyone who does that can support me. My client requires me to run survey lines over an area to collect the required data and I need waypoints to input into my vehicles autopilot system. The client has provided me with the survey area as a list of positions in WGS84 latitude and longitude or UTM eastings and northings along with the given zone. I was able to visualise this area over Google Maps, which I am familiar with, identify from Google satellite imagery any potential obstacles, and produce a line plan which provides start and end coordinates that I can enter into my autopilot. |
+| Competent surveyor/GIS/CAD technician                                                    | I’ve been assigned to a new project that my company has recently been awarded following a successful bid. My project manager has asked me to create a final line plan for the survey acquisition and provided me with the client boundary, along with a file containing the data from the as-bid indicative plan. I’ve quickly been able to load both of these into the propriety acquisition software, make an assessment on its suitability and make any adjustments as required. I’ve now moved onto different parts of the planning and preparation process.                                                                                                                                                                                                                                                                                                                               |
 
 ### Structure
-As a product designed to be utilised by non-technical operators to produce techincal 
-outputs quickly it is important to make the experience simple and rewarding for the user. 
-The site consists of one page and makes use of collapsing sections which cover over parts 
-of the main content of the page, which is a full-page Map API area. The 
-collapsing sections provide more in-depth interaction such as input forms and 
-file upload/download functions and can be left expanded by the user if desired. Core 
-functionality is provided more permanently over the main map area in the form of 
-simple buttons. A modal automatically appears once the page is loaded to provide 
-the necessary introductory content on site purpose and key instructions. It can be 
-dismissed by the user and brough back at any point via a dedicated button. 
 
-A combination of a Map API, and open source library of geodesy tools provided by 
-[Movable Type Ltd](https://www.movable-type.co.uk/), [Moveable Type GitHub](https://github.com/chrisveness/geodesy), 
-a CSV to JSON converter provided by [Cloudmersive](https://api.cloudmersive.com/docs/convert.asp), 
-JQuery and vanilla Javascript have been used to create the sites functionality. 
+As a product designed to be utilised by non-technical operators to produce techincal
+outputs quickly it is important to make the experience simple and rewarding for the user.
+The site consists of one page and makes use of collapsing sections which cover over parts
+of the main content of the page, which is a full-page Map API area. The
+collapsing sections provide more in-depth interaction such as input forms and
+file upload/download functions and can be left expanded by the user if desired. Core
+functionality is provided more permanently over the main map area in the form of
+simple buttons. A modal automatically appears once the page is loaded to provide
+the necessary introductory content on site purpose and key instructions. It can be
+dismissed by the user and brough back at any point via a dedicated button.
 
-User created data is saved within session storage to allow the workspace to be quickly 
-reset. 
+A combination of a Map API, and open source library of geodesy tools provided by
+[Movable Type Ltd](https://www.movable-type.co.uk/), [Moveable Type GitHub](https://github.com/chrisveness/geodesy),
+a CSV to JSON converter provided by [Cloudmersive](https://api.cloudmersive.com/docs/convert.asp),
+JQuery and vanilla Javascript have been used to create the sites functionality.
 
-Future expansion considerations have also been considered. If the saving of data and the use 
-of multiple projects is to be rolled out on the site then including the use of a login page, 
-and a projects page before reaching the main map workspace would be prudent to ensure client 
-information data security and appropriate organisation. Suitable permanent storage solutions 
-would need to be applied, such as cloud/server/locally based storage. 
+User created data is saved within session storage to allow the workspace to be quickly
+reset.
 
-The site is designed to be fully responsive and leans on some elements of Bootstrap for 
-this, however it is recommended that a desktop environment is used as the user has a better 
+Future expansion considerations have also been considered. If the saving of data and the use
+of multiple projects is to be rolled out on the site then including the use of a login page,
+and a projects page before reaching the main map workspace would be prudent to ensure client
+information data security and appropriate organisation. Suitable permanent storage solutions
+would need to be applied, such as cloud/server/locally based storage.
+
+The site is designed to be fully responsive and leans on some elements of Bootstrap for
+this, however it is recommended that a desktop environment is used as the user has a better
 array of inputs including a keyboard, mouse and greater screen real-estate.  
 The site is more challenging to use on mobile and tablet devices but is fully designed to be
-compatible with these devices. 
+compatible with these devices.
 
-As the site will initially not have more than one page, a navigation bar will not be required. 
+As the site will initially not have more than one page, a navigation bar will not be required.
 
 ### Skeleton
 
-The site will be responsive across all device sizes and utilise Bootstrap 4 breakpoints to achieve this. The site will be easiest to use on lg and above device sizes due to screen real estate and user input options. As Bootstrap is optimised for smaller mobile devices I will create a custom “XXL” breakpoint to accommodate extra large and high definition devices, where XL breakpoint would begin to become oversized and “blown-up”. 
+The site will be responsive across all device sizes and utilise Bootstrap 4 breakpoints to achieve this. The site will be easiest to use on lg and above device sizes due to screen real estate and user input options. As Bootstrap is optimised for smaller mobile devices I will create a custom “XXL” breakpoint to accommodate extra large and high definition devices, where XL breakpoint would begin to become oversized and “blown-up”.
 
-|Bootstrap Breakpoint ID|Minimum Pixel Width|Maximum Pixel Width|
-|-----------------------|-------------------|-------------------|
-|XS - SM|	1px|	767px|
-|MD - LG|	768px|	1199px|
-|XL	|1200px|	2559px|
-|XXL (Custom breakpoint)|	2560px|	Infinite|
+| Bootstrap Breakpoint ID | Minimum Pixel Width | Maximum Pixel Width |
+| ----------------------- | ------------------- | ------------------- |
+| XS - SM                 | 1px                 | 767px               |
+| MD - LG                 | 768px               | 1199px              |
+| XL                      | 1200px              | 2559px              |
+| XXL (Custom breakpoint) | 2560px              | Infinite            |
 
 Common device sizes are:
+
 - Mobile Phones (xs-sm Bootstrap sizing)
 - Recreational Tablets (md Bootstrap sizing)
 - Professional Tablets (lg Bootstrap sizing)
 - Laptops and Desktops (XL Bootstrap sizing)
 - TVs, projectors and high definition monitors (XXL Custom sizing)
 
-[Wireframes](assets/docs/wireframes.pdf) were constructed in Basamiq Wireframe 4 in order to provide a design brief for 
+[Wireframes](assets/docs/wireframes.pdf) were constructed in Basamiq Wireframe 4 in order to provide a design brief for
 the project, maximise coding productivity and minimise mission creep.
 
 ### Surface
@@ -195,7 +198,7 @@ the project, maximise coding productivity and minimise mission creep.
 [Bootstrap Homepage](https://getbootstrap.com/)
 
 Bootstrap was utilised to provide responsive front-end design via a component library. It is able to provide some
-JavaScript functionality including collapse and accordion section div control. 
+JavaScript functionality including collapse and accordion section div control.
 
 #### License
 
@@ -209,23 +212,31 @@ Bootstrap Copyright is as follows: Copyright (c) 2011-2020 Twitter, Inc. Copyrig
 
 jQuery is a JavaScript library designed to make html traversal and manipulation
 much simpler than raw JavaScript, by presenting the author with a wealth of
-simple code and commands which call on much more complex functions. 
+simple code and commands which call on much more complex functions.
 
 jQuery was utilised to improve the targeting of elements and provide some support
-for animation and user interaction where possible. 
+for animation and user interaction where possible.
 
-#### License 
+#### License
 
-jQuery is provided under the [MIT License](https://tldrlegal.com/license/mit-license) 
+jQuery is provided under the [MIT License](https://tldrlegal.com/license/mit-license)
 
 ### Mapbox
 
 ### LogoMakr
 
+Produced the brand logo using a combination of Google Fonts and icons.
+
+https://logomakr.com
+
+https://logomakr.com/getstarted/terms-conditions/
+
 ### Google Fonts
+
 Google Fonts offers open source font styling options for personal and commercial use. 2 fonts were used within style.css. One of these fonts was also used within Logomakr to create the site logo.
 
 #### License
+
 The use of this product was inline with Google API's terms of service https://developers.google.com/terms
 
 ### Font Awesome
@@ -233,6 +244,7 @@ The use of this product was inline with Google API's terms of service https://de
 Font Awesome provides text based icons which can be manipulated and controlled by CSS styling. These were used to prompt user interaction provide visual ques to functionality.
 
 #### License
+
 Icons are licensed under the CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
 
 Fonts are licensed under SIL OFL 1.1 https://scripts.sil.org/OFL
