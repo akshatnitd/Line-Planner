@@ -5,18 +5,18 @@ font-family: 'Montserrat', sans-serif;*/
 
 /*Color Palette - not assigned, for reference only*/
 .colorPalette {
-    color: #616161; /*Grey*/
-    color: #8e8e8e; /*Light Grey*/
-    color: #373737; /*Dark Grey*/
-    color: #0099cc; /*Blue*/
-    color: #5dcaff; /*Light Blue*/
-    color: #006b9b; /*Dark Blue*/
-    color: #56b714; /*Green*/
-    color: #8bea4f; /*Light Green*/
-    color: #148600; /*Dark Green*/
-    color: #fcdd00; /*Yellow*/
-    color: #ffff53; /*Light Yellow*/
-    color: #c4ac00; /*Dark Yellow*/
+    color: #616161; /*Grey* rgb(97,97,97)*/
+    color: #8e8e8e; /*Light Grey rgb(142,142,142)*/
+    color: #373737; /*Dark Grey rgb(55,55,55)*/
+    color: #0099cc; /*Blue rgb(0,153,204)*/
+    color: #5dcaff; /*Light Blue rgb(93,202,255)*/
+    color: #006b9b; /*Dark Blue rgb(0,107,155)*/
+    color: #56b714; /*Green rgb(86,183,20)*/
+    color: #8bea4f; /*Light Green rgb(139,234,79)*/
+    color: #148600; /*Dark Green rgb(20,134,0)*/
+    color: #fcdd00; /*Yellow rgb(252,221,0)*/
+    color: #ffff53; /*Light Yellow rgb(255,255,83)*/
+    color: #c4ac00; /*Dark Yellow rgb(196,172,0)*/
     color: #f5f5f5; /*Light Text*/
     color: #000000; /*Default Text*/
     color: #ad001f; /*Warning Text*/
@@ -27,6 +27,11 @@ font-family: 'Montserrat', sans-serif;*/
 header {
     position: relative;
     z-index: 1000;
+}
+
+.onTop {
+    position: relative;
+    z-index: 900;
 }
 
 
@@ -68,13 +73,32 @@ body {
     height: 95vh;
 }
 
+#interface {
+    height: 75vh;
+    margin: 5vh 0;
+}
+
 footer {
     height: 5vh;
 }
 
 /*Backgrounds*/
 .bgGlassSmoke {
-    background-image: linear-gradient(135deg, rgba(142,142,142,0.25), rgba(55,55,55,0.5), rgba(142,142,142,0.5));
+    background-image: linear-gradient(135deg, rgba(142,142,142,0.25), rgba(55,55,55,0.5), rgba(97,97,97,0.5));
+    border-width: 0.5px; 
+    border-color: rgba(108,108,108,0.25);
+    border-style: outset;
+}
+
+.bgGlassBlue {
+    background-image: linear-gradient(135deg, rgba(93,202,255,0.25), rgba(0,107,155,0.5), rgba(0,153,204,0.5));
+    border-width: 0.5px; 
+    border-color: rgba(108,108,108,0.25);
+    border-style: outset;
+}
+
+.bgGlassGreen {
+    background-image: linear-gradient(135deg, rgba(139,234,79,0.25), rgba(20,134,0,0.5), rgba(86,183,20,0.5));
     border-width: 0.5px; 
     border-color: rgba(108,108,108,0.25);
     border-style: outset;
