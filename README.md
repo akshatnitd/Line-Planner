@@ -198,7 +198,20 @@ the project, maximise coding productivity and minimise mission creep.
 
 ---
 
-### Bootstrap
+### Bootstrap 4.5.2
+
+[Bootstrap Homepage](https://getbootstrap.com/)
+
+Bootstrap was utilised to provide responsive front-end design via a component library. It is able to provide some
+JavaScript functionality including collapse and accordion section div control. 
+
+### License
+
+Bootstrap is released under the MIT License (MIT)
+
+A copy of this license is provided in Bootstraps GitHub Project: https://github.com/twbs/bootstrap/blob/v4.5.0/LICENSE
+
+Bootstrap Copyright is as follows: Copyright (c) 2011-2020 Twitter, Inc. Copyright (c) 2011-2020 The Bootstrap Authors
 
 ### JQuery
 
