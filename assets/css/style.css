@@ -23,6 +23,12 @@ font-family: 'Montserrat', sans-serif;*/
 
 }
 
+/*Positioning*/
+header {
+    position: relative;
+    z-index: 1000;
+}
+
 
 /*Fonts and Text Sizing*/
 body {
