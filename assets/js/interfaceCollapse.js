@@ -7,4 +7,7 @@ $("document").ready(function(){
          $("#linesInterface").toggle();
          $("#boundaryInterface").hide();
     });
+    $("#statsHead").click(function(){
+         $("#statsInterface").toggle();
+    });
 })

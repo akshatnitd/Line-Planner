@@ -44,13 +44,17 @@
       crossorigin="anonymous"
     ></script>
     <!--Custom Scripts-->
-    <script type="text/javascript" src="assets/js/leftInterfaceCollapse.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/js/interfaceCollapse.js"
+    ></script>
   </head>
 
   <body>
     <section id="workspace" class="container-fluid no-padding">
       <div id="mapSpace" class="row no-gutters">
         <div id="map" class="col">
+          <!--Header bar with logo and toolbar-->
           <header class="row no-gutters">
             <div id="logo" class="col-2">
               <img
@@ -60,39 +64,54 @@
             </div>
             <div id="toolbar" class="col-6 offset-4 bgGlassSmoke"></div>
           </header>
-          <div id="leftInterface" class="col-11 col-md-6 col-lg-3 no-padding">
-            <div class="row no-gutters">
-              <div
-                id="boundaryInterface"
-                class="col-11 interfaceSizing bgGlassBlue onTop"
-              ></div>
-              <div id="linesInterface" class="col-11 interfaceSizing bgGlassGreen onTop"></div>
-              <div id="leftInterfaceHeads" class="col-1 interfaceSizing">
+          <div class="row no-gutters">
+            <!--Left Interface Panel-->
+            <div id="leftInterface" class="col-11 col-md-6 col-lg-3 mr-auto no-padding">
+              <div class="row no-gutters">
+                <!--Left Interfaces-->
                 <div
-                  id="boundaryHead"
-                  class="col bgGlassBlue no-padding onTop"
-                ><h3>Boundary</h3></div>
+                  id="boundaryInterface"
+                  class="col-11 interfaceSizing bgGlassBlue onTop"
+                ></div>
                 <div
-                  id="linesHead"
-                  class="col bgGlassGreen no-padding onTop"
-                ><h3>Lines</h3></div>
+                  id="linesInterface"
+                  class="col-11 interfaceSizing bgGlassGreen onTop"
+                ></div>
+                <!--Left Interface Headers-->
+                <div id="leftInterfaceHeads" class="col-1 interfaceSizing">
+                  <div
+                    id="boundaryHead"
+                    class="col bgGlassBlue no-padding onTop"
+                  >
+                    <h3>Boundary</h3>
+                  </div>
+                  <div id="linesHead" class="col bgGlassGreen no-padding onTop">
+                    <h3>Lines</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Right Interface Panel-->
+            <div
+              id="rightInterface"
+              class="col-11 col-md-6 col-lg-3 ml-auto no-padding"
+            >
+              <div class="row no-gutters">
+                <!--Right Interface Headers-->
+                <div id="rightInterfaceHeads" class="col-1 ml-auto interfaceSizing">
+                  <div id="statsHead" class="col bgGlassSmoke no-padding onTop">
+                    <h3>Statistics</h3>
+                  </div>
+                </div>
+                <!--Right Interfaces-->
+                <div
+                  id="statsInterface"
+                  class="col-11 interfaceSizing bgGlassSmoke onTop"
+                ></div>
               </div>
             </div>
           </div>
-          <!--<div id="leftInterface" class="row no-gutters onTop">-->
-
-          <!--
-            -->
         </div>
-        <!--<div id="rightInterface" class="col-6">
-              <div class="row no-gutters height100">
-                <div id="statsHead" class="col-1 bgGlassSmoke"></div>
-                <div
-                  id="statsInterface"
-                  class="col-11 bgGlassSmoke height100"
-                ></div>
-              </div>
-            </div>-->
       </div>
     </section>
     <footer class="container-fluid bgDarkGrey lightText">

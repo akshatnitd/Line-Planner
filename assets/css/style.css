@@ -55,11 +55,11 @@ h3 {
     font-weight: 700;
 }
 
-#leftInterfaceHeads h3 {
+#leftInterfaceHeads h3, #rightInterfaceHeads h3 {
     writing-mode: vertical-rl;
+    text-orientation: upright;
     margin: 0;
 }
-
 
 /*Padding and Margins*/
 .no-padding {
@@ -89,12 +89,16 @@ body {
     margin: 5vh 0;
 }
 
-#boundaryInterface, #linesInterface {
+#boundaryInterface, #linesInterface, #statsInterface {
     display: none;
 }
 
 #boundaryHead, #linesHead {
     height: 37.5vh;
+}
+
+#statsHead {
+    height: 75vh;
 }
 
 .height100 {
