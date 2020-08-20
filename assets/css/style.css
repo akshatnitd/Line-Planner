@@ -57,6 +57,7 @@ h3 {
 
 #leftInterfaceHeads h3 {
     writing-mode: vertical-rl;
+    margin: 0;
 }
 
 
