@@ -1,0 +1,4 @@
+.mapboxgl-ctrl-top-left, .mapboxgl-ctrl-top-right {
+    top: 4vh;
+    left: 0;
+}
