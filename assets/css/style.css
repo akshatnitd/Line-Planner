@@ -78,7 +78,7 @@ body {
     margin: 5vh 0;
 }
 
-#boundaryHead {
+#boundaryHead, #linesHead {
     height: 37.5vh;
 }
 
