@@ -1,6 +1,6 @@
 $("document").ready(function () {
   mapboxgl.accessToken =
-    "pk.eyJ1Ijoia3dzbmljayIsImEiOiJja2UxM3p1aGQwN25rMnJwNDFwMGtiNGVlIn0.7HoRrtOOGPl7sfGfOBaudA";
+    "pk.eyJ1Ijoia3dzbmljayIsImEiOiJja2UzMDY3eDAwZWZvMnlwZHk2bWJ3OXkxIn0.prNYik8MEfEYiueN0vP58Q";
 
   let map = new mapboxgl.Map({
     container: "map",
