@@ -73,9 +73,13 @@ body {
     height: 95vh;
 }
 
-#leftInterface, #rightInterface {
+.interfaceSizing {
     height: 75vh;
     margin: 5vh 0;
+}
+
+#boundaryHead {
+    height: 37.5vh;
 }
 
 .height100 {
