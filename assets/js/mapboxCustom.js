@@ -5,7 +5,7 @@ $("document").ready(function () {
   let map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-    center: [-3.0, 53.5], // starting position [lng, lat]
-    zoom: 9, // starting zoom
+    center: [-2.995859, 53.405974], // starting position [lng, lat]
+    zoom: 11, // starting zoom
   });
 });
