@@ -49,6 +49,16 @@ body {
     text-align: right;
 }
 
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+#leftInterfaceHeads h3 {
+    writing-mode: vertical-rl;
+}
+
 
 /*Padding and Margins*/
 .no-padding {
