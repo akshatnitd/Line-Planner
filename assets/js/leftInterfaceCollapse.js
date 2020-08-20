@@ -1,0 +1,10 @@
+$("document").ready(function(){
+    $("#boundaryHead").click(function(){
+        $("#boundaryInterface").toggle();
+        $("#linesInterface").hide();
+    });
+    $("#linesHead").click(function(){
+         $("#linesInterface").toggle();
+         $("#boundaryInterface").hide();
+    });
+})

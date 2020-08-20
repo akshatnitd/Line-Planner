@@ -89,6 +89,10 @@ body {
     margin: 5vh 0;
 }
 
+#boundaryInterface, #linesInterface {
+    display: none;
+}
+
 #boundaryHead, #linesHead {
     height: 37.5vh;
 }
