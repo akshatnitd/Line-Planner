@@ -10,6 +10,24 @@ $("document").ready(function () {
     logoPosition: "top-right",
   });
 
-  map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
-  map.addControl(new mapboxgl.GeolocateControl(), "top-left");
+  let navControl = new mapboxgl.NavigationControl({
+    showZoom: false,
+    visualizePitch: true,
+  });
+
+  let userLocation = new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true,
+    },
+    trackUserLocation: true,
+  });
+
+  let scale = new mapboxgl.ScaleControl({
+    maxWidth: 200,
+    unit: "metric",
+  });
+
+  map.addControl(navControl, "bottom-left");
+  map.addControl(userLocation, "bottom-left");
+  map.addControl(scale, "bottom-right");
 });
