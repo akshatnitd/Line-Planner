@@ -2,3 +2,15 @@
     top: 4vh;
     left: 0;
 }
+
+#toolbar .mapboxgl-ctrl-group button {
+    display: inline-block;
+    width: 5vw;
+    height: 100%;
+    border-top: none;
+}
+
+#toolbar .mapboxgl-ctrl-group {
+    background: transparent;
+    height: 100%;
+}
