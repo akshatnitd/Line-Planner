@@ -11,6 +11,8 @@
 }
 
 #toolbar .mapboxgl-ctrl-group {
+    display: inline-block;
     background: transparent;
     height: 100%;
+    box-shadow: none;
 }

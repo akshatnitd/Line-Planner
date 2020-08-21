@@ -39,8 +39,8 @@ $("document").ready(function () {
     unit: "metric",
   });
 
-  map.addControl(navControl, "bottom-left");
-  map.addControl(userLocation, "bottom-left");
+  document.getElementById("toolbar").appendChild(navControl.onAdd(map));
+  document.getElementById("toolbar").appendChild(userLocation.onAdd(map));
   map.addControl(scale, "bottom-right");
 
     map.on("load", function(){
