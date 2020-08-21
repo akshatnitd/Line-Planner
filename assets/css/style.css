@@ -70,6 +70,10 @@ h3 {
     margin: 0;
 }
 
+#mapStyle {
+    margin: 2.2vh 0 0 3vw;
+}
+
 /*Sizing*/
 body {
     max-height: 100vh;

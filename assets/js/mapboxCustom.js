@@ -10,6 +10,17 @@ $("document").ready(function () {
     logoPosition: "top-right",
   });
 
+$("#mapStyles").click( function setLayer() {
+    $("#mapStyles").change(function(event) { 
+        let layerId = $(this).val()
+        switchLayer(layerId);
+    })
+})
+
+function switchLayer (setId) {
+    map.setStyle('mapbox://styles/mapbox/' + setId);
+}
+ 
   let navControl = new mapboxgl.NavigationControl({
     showZoom: false,
     visualizePitch: true,
