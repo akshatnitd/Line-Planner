@@ -36,7 +36,7 @@ header {
 
 
 /*Fonts and Text Sizing*/
-body {
+body, #mapStyle {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.65rem;
 }
