@@ -9,17 +9,18 @@ $("document").ready(function () {
     zoom: 11, // starting zoom
     logoPosition: "top-right",
   });
-
-$("#mapStyles").click( function setLayer() {
+// Map type dropdown selector listener and setter
+  $("#mapStyles").click( function setLayer() {
     $("#mapStyles").change(function(event) { 
         let layerId = $(this).val()
         switchLayer(layerId);
     })
-})
+  })
 
-function switchLayer (setId) {
+// Code inspiration from mapbox API documentation, modified to work on a dropdown
+  function switchLayer (setId) {
     map.setStyle('mapbox://styles/mapbox/' + setId);
-}
+  }
  
   let navControl = new mapboxgl.NavigationControl({
     showZoom: false,
