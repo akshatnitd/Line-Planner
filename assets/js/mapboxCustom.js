@@ -42,4 +42,12 @@ $("document").ready(function () {
   map.addControl(navControl, "bottom-left");
   map.addControl(userLocation, "bottom-left");
   map.addControl(scale, "bottom-right");
+
+    map.on("load", function(){
+        let draw = new MapboxDraw({
+            displayControlsDefault: true,
+        });
+        document.getElementById("toolbar").appendChild(draw.onAdd(map));
+    });
+       
 });
