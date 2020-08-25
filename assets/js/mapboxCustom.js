@@ -49,5 +49,15 @@ $("document").ready(function () {
         });
         document.getElementById("toolbar").appendChild(draw.onAdd(map));
     });
-       
+    
+    // Show cursor location. Inspired by Mapbox GL API documentation
+    map.on('mousemove', function(e) {
+        document.getElementById("position").innerHTML =
+        // e.point is the x, y coordinates of the mousemove event relative
+        // to the top-left corner of the map
+        JSON.stringify(e.point) +
+        '<br />' +
+        // e.lngLat is the longitude, latitude geographical position of the event
+        JSON.stringify(e.lngLat.wrap());
+    });
 });
