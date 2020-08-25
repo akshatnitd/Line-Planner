@@ -74,6 +74,10 @@ h3 {
     margin: 0 0 0 3vw;
 }
 
+.fullWidth {
+    width: 100%;
+}
+
 /*Sizing*/
 body {
     max-height: 100vh;
