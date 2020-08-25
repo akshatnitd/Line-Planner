@@ -52,20 +52,24 @@ $("document").ready(function () {
     
     // Show cursor location. Inspired by Mapbox GL API documentation
     map.on("mousemove", function(e) {
+        let longitude = JSON.stringify(e.lngLat["lng"]);
+        let latitude = JSON.stringify(e.lngLat["lat"]);
         document.getElementById("cursorLat").innerHTML =
         // e.lngLat is the longitude, latitude geographical position of the mousemove event.
         // Latitude and Longitude targeted specifically and reported into separate elements.
-        '<p class="no-margin">LAT: ' + JSON.stringify(e.lngLat["lat"]); + '</p>'
+        '<p class="no-margin">LAT: ' + latitude + '</p>'
         document.getElementById("cursorLong").innerHTML =
-        '<p class="no-margin">LONG: ' + JSON.stringify(e.lngLat["lng"]); + '</p>'
+        '<p class="no-margin">LONG: ' + longitude + '</p>'
     });
 
     map.on("touchend", function(e) {
+        let longitude = JSON.stringify(e.lngLat["lng"]);
+        let latitude = JSON.stringify(e.lngLat["lat"]);
         document.getElementById("cursorLat").innerHTML =
         // e.lngLat is the longitude, latitude geographical position of the mousemove event.
         // Latitude and Longitude targeted specifically and reported into separate elements.
-        '<p class="no-margin">LAT: ' + JSON.stringify(e.lngLat["lat"]); + '</p>'
+        '<p class="no-margin">LAT: ' + latitude + '</p>'
         document.getElementById("cursorLong").innerHTML =
-        '<p class="no-margin">LONG: ' + JSON.stringify(e.lngLat["lng"]); + '</p>'
+        '<p class="no-margin">LONG: ' + longitude + '</p>'
     });
 });
