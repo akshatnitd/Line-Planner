@@ -61,7 +61,7 @@ $("document").ready(function () {
         document.getElementById("cursorLong").innerHTML =
         '<p class="no-margin">LONG: ' + longitude + '</p>'
     });
-
+    //On touch end the footer reports the last touch position in Lat and Long. 
     map.on("touchend", function(e) {
         let longitude = JSON.stringify(e.lngLat["lng"]);
         let latitude = JSON.stringify(e.lngLat["lat"]);
