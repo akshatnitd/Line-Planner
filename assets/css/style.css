@@ -25,12 +25,12 @@ font-family: 'Montserrat', sans-serif;*/
 
 /*Positioning*/
 header {
-    position: relative;
+    position: fixed;
     z-index: 1000;
 }
 
 .onTop {
-    position: relative;
+    position: fixed;
     z-index: 900;
 }
 
