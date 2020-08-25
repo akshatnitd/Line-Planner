@@ -52,7 +52,6 @@ $("document").ready(function () {
     
     // Show cursor location. Inspired by Mapbox GL API documentation
     map.on("mousemove", function(e) {
-        console.log(e);
         document.getElementById("cursorLat").innerHTML =
         // e.lngLat is the longitude, latitude geographical position of the event
         '<p>LAT: ' + JSON.stringify(e.lngLat["lat"]); + '</p>'
