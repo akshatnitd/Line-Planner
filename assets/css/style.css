@@ -49,6 +49,14 @@ body, #mapStyle {
     text-align: right;
 }
 
+.leftAlign {
+    text-align: left;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
 h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
