@@ -51,13 +51,12 @@ $("document").ready(function () {
     });
     
     // Show cursor location. Inspired by Mapbox GL API documentation
-    map.on("click", function(e) {
+    map.on("mousemove", function(e) {
         console.log(e);
-        document.getElementById("position").innerHTML =
+        document.getElementById("cursorLat").innerHTML =
         // e.lngLat is the longitude, latitude geographical position of the event
-        '<p>LAT: ' + JSON.stringify(e.lngLat["lat"]) + '<br>'
-        +
-        'LONG: ' +
-        JSON.stringify(e.lngLat["lng"]);+ '</p>'
+        '<p>LAT: ' + JSON.stringify(e.lngLat["lat"]); + '</p>'
+        document.getElementById("cursorLong").innerHTML =
+        '<p>LONG: ' + JSON.stringify(e.lngLat["lng"]); + '</p>'
     });
 });
