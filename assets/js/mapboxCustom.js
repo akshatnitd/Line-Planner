@@ -55,8 +55,17 @@ $("document").ready(function () {
         document.getElementById("cursorLat").innerHTML =
         // e.lngLat is the longitude, latitude geographical position of the mousemove event.
         // Latitude and Longitude targeted specifically and reported into separate elements.
-        '<p>LAT: ' + JSON.stringify(e.lngLat["lat"]); + '</p>'
+        '<p class="no-margin">LAT: ' + JSON.stringify(e.lngLat["lat"]); + '</p>'
         document.getElementById("cursorLong").innerHTML =
-        '<p>LONG: ' + JSON.stringify(e.lngLat["lng"]); + '</p>'
+        '<p class="no-margin">LONG: ' + JSON.stringify(e.lngLat["lng"]); + '</p>'
+    });
+
+    map.on("touchend", function(e) {
+        document.getElementById("cursorLat").innerHTML =
+        // e.lngLat is the longitude, latitude geographical position of the mousemove event.
+        // Latitude and Longitude targeted specifically and reported into separate elements.
+        '<p class="no-margin">LAT: ' + JSON.stringify(e.lngLat["lat"]); + '</p>'
+        document.getElementById("cursorLong").innerHTML =
+        '<p class="no-margin">LONG: ' + JSON.stringify(e.lngLat["lng"]); + '</p>'
     });
 });
