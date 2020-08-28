@@ -51,16 +51,19 @@ $("document").ready(function () {
     });
     
     // Show cursor location. Inspired by Mapbox GL API documentation
-    map.on("mousemove", function(e) {
-        let longitude = JSON.stringify(e.lngLat["lng"]);
-        let latitude = JSON.stringify(e.lngLat["lat"]);
-        document.getElementById("cursorLat").innerHTML =
-        // e.lngLat is the longitude, latitude geographical position of the mousemove event.
-        // Latitude and Longitude targeted specifically and reported into separate elements.
-        '<p class="no-margin">LAT: ' + latitude + '</p>'
-        document.getElementById("cursorLong").innerHTML =
-        '<p class="no-margin">LONG: ' + longitude + '</p>'
-    });
+    function reportCursorPos () {
+        map.on("mousemove", function(e) {
+            let longitude = JSON.stringify(e.lngLat["lng"]);
+            let latitude = JSON.stringify(e.lngLat["lat"]);
+            document.getElementById("cursorLat").innerHTML =
+            // e.lngLat is the longitude, latitude geographical position of the mousemove event.
+            // Latitude and Longitude targeted specifically and reported into separate elements.
+            '<p class="no-margin">LAT: ' + latitude + '</p>'
+            document.getElementById("cursorLong").innerHTML =
+            '<p class="no-margin">LONG: ' + longitude + '</p>'
+        });
+    };
+    reportCursorPos();
     //On touch end the footer reports the last touch position in Lat and Long. 
     map.on("touchend", function(e) {
         let longitude = JSON.stringify(e.lngLat["lng"]);
