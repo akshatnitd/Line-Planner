@@ -51,7 +51,7 @@ $("document").ready(function () {
     });
     
     // Show cursor location. Inspired by Mapbox GL API documentation
-    function reportCursorPos () {
+    function reportCursorPos() {
         map.on("mousemove", function(e) {
             let longitude = JSON.stringify(e.lngLat["lng"]);
             let latitude = JSON.stringify(e.lngLat["lat"]);
@@ -65,7 +65,7 @@ $("document").ready(function () {
     };
     reportCursorPos();
     //On touch end the footer reports the last touch position in Lat and Long. 
-    function reportLastTouchPos () {
+    function reportLastTouchPos() {
         map.on("touchend", function(e) {
             let longitude = JSON.stringify(e.lngLat["lng"]);
             let latitude = JSON.stringify(e.lngLat["lat"]);
