@@ -65,14 +65,17 @@ $("document").ready(function () {
     };
     reportCursorPos();
     //On touch end the footer reports the last touch position in Lat and Long. 
-    map.on("touchend", function(e) {
-        let longitude = JSON.stringify(e.lngLat["lng"]);
-        let latitude = JSON.stringify(e.lngLat["lat"]);
-        document.getElementById("cursorLat").innerHTML =
-        // e.lngLat is the longitude, latitude geographical position of the mousemove event.
-        // Latitude and Longitude targeted specifically and reported into separate elements.
-        '<p class="no-margin">LAT: ' + latitude + '</p>'
-        document.getElementById("cursorLong").innerHTML =
-        '<p class="no-margin">LONG: ' + longitude + '</p>'
-    });
+    function reportLastTouchPos () {
+        map.on("touchend", function(e) {
+            let longitude = JSON.stringify(e.lngLat["lng"]);
+            let latitude = JSON.stringify(e.lngLat["lat"]);
+            document.getElementById("cursorLat").innerHTML =
+            // e.lngLat is the longitude, latitude geographical position of the mousemove event.
+            // Latitude and Longitude targeted specifically and reported into separate elements.
+            '<p class="no-margin">LAT: ' + latitude + '</p>'
+            document.getElementById("cursorLong").innerHTML =
+            '<p class="no-margin">LONG: ' + longitude + '</p>'
+        });
+    };
+    reportLastTouchPos();
 });
