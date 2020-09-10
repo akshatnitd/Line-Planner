@@ -1,8 +1,9 @@
 describe("Report Cursor Position", function () {
-        describe("Report Cursor Latitude", function () {
-            let latitude = document.getElementById("cursorLat");
-        it("Should return a floating point", function () {
-            expect(latitude).toBe(53.44719478193824);
+  describe("Report Cursor Latitude", function () {
+    let latitude = document.getElementById("cursorLat");
+    let latCheck = isFinite(latitude);
+    it("Should be a number", function () {
+      expect(latCheck).toBe(true);
     });
   });
-})
+});
