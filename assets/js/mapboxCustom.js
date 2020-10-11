@@ -61,6 +61,8 @@ $("document").ready(function () {
             '<p class="no-margin">LAT: ' + '<span>' + latitude + '</span>' + '</p>'
             document.getElementById("cursorLong").innerHTML =
             '<p class="no-margin">LONG: ' + '<span>' +  longitude + '</span>' + '</p>'
+            return(latitude);
+            return(longitude);
         });
     };
     reportCursorPos();
