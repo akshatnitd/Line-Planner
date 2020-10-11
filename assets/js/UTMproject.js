@@ -3,7 +3,6 @@ $(document).ready(function(){
     $("#map").on("mousemove", function(){
         let cursorLat = $("#cursorLat>p>span").html();
         let cursorLong = $("#cursorLong>p>span").html();
-        /*let cursorLatLon = new LatLon(latitude, longitude,);
-        console.log(cursorLatLon);*/
+        let cursorLatLong = new LatLon(cursorLat, cursorLong,);
     });
 })
