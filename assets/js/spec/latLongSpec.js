@@ -6,4 +6,11 @@ describe("Report Cursor Position", function () {
       expect(latCheck).toBe(true);
     });
   });
+  describe("Report Cursor northing", function () {
+    let northing = document.getElementById("cursorNorthing");
+    let northCheck = isFinite(northing);
+    it("Should be a number", function () {
+      expect(northCheck).toBe(true);
+    });
+  });
 });
