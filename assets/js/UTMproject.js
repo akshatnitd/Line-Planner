@@ -12,9 +12,9 @@ $(document).ready(function(){
         document.getElementById("cursorGeodetic").innerHTML =
             '<p class="no-margin">' + '<span> WGS84 </span>' + '</p>'
         document.getElementById("cursorNorthing").innerHTML =
-            '<p class="no-margin">' + '<span>' + northing + '</span>' + '</p>'
+            '<p class="no-margin">' + '<span>' + northing.toFixed(2) + '</span>' + '</p>'
         document.getElementById("cursorEasting").innerHTML =
-            '<p class="no-margin">' + '<span>' + easting + '</span>' + '</p>'
+            '<p class="no-margin">' + '<span>' + easting.toFixed(2) + '</span>' + '</p>'
         document.getElementById("cursorUtmZone").innerHTML =
             '<p class="no-margin">' + '<span> UTM ' + zone + ' ' + hemi + '</span>' + '</p>'
     });
