@@ -16,7 +16,7 @@
       content="survey, line, plan, duration, CAD, GIS, lineplan, line-plan, planning, hydrographic, aerial"
     />
     <title>Line Planner</title>
-        <!--Bootstrap 4.5.2-->
+    <!--Bootstrap 4.5.2-->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -62,12 +62,29 @@
       type="text/javascript"
       src="assets/js/interfaceCollapse.js"
     ></script>
-    
+
     <!--Jasmine Testing-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.js" integrity="sha512-dqL4nYnbiMiNNy/V2zRK55QXSRVyu26KCuGoL8Zf5lDfKRRf8pBFW8RXe8at36QlB8s8bnOjKP6b5YTalHO6wQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine-html.js" integrity="sha512-bqig44hBpNuvBzxsqbHiqwRximGm4UfJAvOeNQHjB7++0D2u/3bcw4ZwmVsqrooii2UJ91oDI/6aANdp3BwcQQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/boot.js" integrity="sha512-igPP1Xd0hsvXVZGyfIYeUD779NLEA1Sj/5ts2C/e/22zeUqR6ehA7M/nNLuONalznkHQkGPBESNwzGpwBQD60g==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.css" integrity="sha512-XKXP02aeSNI5HsDB3+4MM0tSDXJTBFZpt99xL7PvMz3+A3aRy0F0Ne/CATK+Z72ckE/4Ev9OiosWQr5LtU284Q==" crossorigin="anonymous" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.js"
+      integrity="sha512-dqL4nYnbiMiNNy/V2zRK55QXSRVyu26KCuGoL8Zf5lDfKRRf8pBFW8RXe8at36QlB8s8bnOjKP6b5YTalHO6wQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine-html.js"
+      integrity="sha512-bqig44hBpNuvBzxsqbHiqwRximGm4UfJAvOeNQHjB7++0D2u/3bcw4ZwmVsqrooii2UJ91oDI/6aANdp3BwcQQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/boot.js"
+      integrity="sha512-igPP1Xd0hsvXVZGyfIYeUD779NLEA1Sj/5ts2C/e/22zeUqR6ehA7M/nNLuONalznkHQkGPBESNwzGpwBQD60g=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.css"
+      integrity="sha512-XKXP02aeSNI5HsDB3+4MM0tSDXJTBFZpt99xL7PvMz3+A3aRy0F0Ne/CATK+Z72ckE/4Ev9OiosWQr5LtU284Q=="
+      crossorigin="anonymous"
+    />
     <!--Jasmine Test Scripts-->
     <script type="text/javascript" src="assets/js/spec/latLongSpec.js"></script>
   </head>
@@ -87,7 +104,16 @@
             <div id="toolbar" class="col-6 offset-4 bgGlassSmoke"></div>
           </header>
           <!--Interface Row-->
-
+          <div id="interfaceRow" class="row no-gutters">
+            <div id="leftInterface" class="col-3 onTop">
+                <div class="row no-gutters">
+                    <div id="boundaryInterface" class="col-11 bgGlassBlue interfaceSizing"></div>
+                    <div id="leftInterfaceHeads" class="col-1 interfaceSizing">
+                            <div id="boundaryHead" class="col bgGlassBlue no-padding"><h3>Boundary</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
           <!--Extra Map Controls-->
           <div class="row no-gutters">
             <div id="mapStyle" class="col-4 onTop">
