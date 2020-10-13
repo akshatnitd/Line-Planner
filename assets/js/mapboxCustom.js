@@ -58,9 +58,9 @@ $("document").ready(function () {
             document.getElementById("cursorLat").innerHTML =
             // e.lngLat is the longitude, latitude geographical position of the mousemove event.
             // Latitude and Longitude targeted specifically and reported into separate elements.
-            '<p class="no-margin">LAT: ' + '<span>' + latitude + '</span>' + '</p>'
+            '<p class="no-margin">LAT: ' + '<span>' + parseFloat(latitude).toFixed(7) + '</span>' + '</p>'
             document.getElementById("cursorLong").innerHTML =
-            '<p class="no-margin">LONG: ' + '<span>' +  longitude + '</span>' + '</p>'
+            '<p class="no-margin">LONG: ' + '<span>' +  parseFloat(longitude).toFixed(7) + '</span>' + '</p>'
         });
     };
     reportCursorPos();
@@ -72,9 +72,9 @@ $("document").ready(function () {
             document.getElementById("cursorLat").innerHTML =
             // e.lngLat is the longitude, latitude geographical position of the mousemove event.
             // Latitude and Longitude targeted specifically and reported into separate elements.
-            '<p class="no-margin">LAT: ' + '<span>' + latitude + '</span>' + '</p>'
+            '<p class="no-margin">LAT: ' + '<span>' + parseFloat(latitude).toFixed(7) + '</span>' + '</p>'
             document.getElementById("cursorLong").innerHTML =
-            '<p class="no-margin">LONG: ' + '<span>' +  longitude + '</span>' + '</p>'
+            '<p class="no-margin">LONG: ' + '<span>' +  parseFloat(longitude).toFixed(7) + '</span>' + '</p>'
         });
     };
     reportLastTouchPos();
