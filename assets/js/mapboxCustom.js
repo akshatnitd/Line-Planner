@@ -105,9 +105,9 @@ $("document").ready(function () {
       let boundary = polygonTarget();
       
       function writeBoundaryToTable() {
-        $("#boundaryCoords>table>tbody>tr").remove();
+        $("#boundaryCoords>#boundaryTable>tbody>tr").remove();
         for (let vertices of boundary) {
-            $("#boundaryCoords>table>tbody").append("<tr><td>" + vertices[1].toFixed(7) + "</td><td>" + vertices[0].toFixed(7) + "</td></tr>");
+            $("#boundaryCoords>#boundaryTable>tbody").append("<tr><td>" + vertices[1].toFixed(7) + "</td><td>" + vertices[0].toFixed(7) + "</td></tr>");
         }
       }
       writeBoundaryToTable();

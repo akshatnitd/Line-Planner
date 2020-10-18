@@ -18,21 +18,39 @@ $(document).ready(function(){
         document.getElementById("cursorUtmZone").innerHTML =
             '<p class="no-margin">' + '<span> UTM ' + zone + ' ' + hemi + '</span>' + '</p>'
     
-        function boundaryToUtm () {
-            let boundTableLat = $("#boundaryCoords>table>tbody>tr>td").first().html();
-            let boundTableLong = $("#boundaryCoords>table>tbody>tr>td").last().html();
-            let boundTableLatLong = new LatLon(boundTableLat, boundTableLong);
-            let boundTableUTM = boundTableLatLong.toUtm();
-            let boundNorthing = boundTableUTM["northing"];
-            let boundEasting = boundTableUTM["easting"];
-            
-            function writeBoundUtmToTable() {
-                $("#boundaryCoords>table>tbody>tr>td").siblings(".projected").remove();
-                $("#boundaryCoords>table>tbody>tr>td").append("<td class='projected'>"+ boundNorthing + "</td><td>" + boundEasting + "</td>");
-            };
-            writeBoundUtmToTable();
-        };
-        boundaryToUtm();
+        //Code to turn boundary table data into an array
+        //Code inspiration from Stack Overflow user Andreas Eriksson posted March 6th 2012
+        let boundaryTableArray = [];
+
+        $("#boundaryTable tr").each(function() {
+            let arrayOfThisVertices = [];
+            let tableData = $(this).find("td");
+            if (tableData.length > 0) {
+                tableData.each(function() {arrayOfThisVertices.push($(this).text()); });
+                boundaryTableArray.push(arrayOfThisVertices);
+            }
+        });
+        
+        function convertBoundaryTableArrayToUtm() {
+            let projectedArray = [];
+            for (let geodeticCoords of boundaryTableArray) {
+                let boundTableLatLong = new LatLon(geodeticCoords[0], geodeticCoords[1]);
+                let boundTableUTM = boundTableLatLong.toUtm();
+                let boundNorthing = boundTableUTM["northing"];
+                let boundEasting = boundTableUTM["easting"];
+                let arrayOfThisProjected = [];
+                arrayOfThisProjected.push(boundNorthing, boundEasting);
+                projectedArray.push(arrayOfThisProjected);
+            }
+           function writeBoundUtmToTable() {
+                $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
+                    for (let projectedVertices of projectedArray) {
+                        $("#boundaryCoords>#boundaryConverted>tbody").append("<tr><td>" + projectedVertices[0].toFixed(2) + "</td><td>" + projectedVertices[1].toFixed(2) + "</td></tr>");
+                    }
+                }
+            writeBoundUtmToTable(); 
+        }
+        convertBoundaryTableArrayToUtm();
     });
     
 })
