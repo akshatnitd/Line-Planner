@@ -106,14 +106,34 @@
           <!--Interface Row-->
           <div id="interfaceRow" class="row no-gutters">
             <div id="leftInterface" class="col-3 onTop">
-                <div class="row no-gutters">
-                    <div id="boundaryInterface" class="col-11 bgGlassBlue interfaceSizing"></div>
-                    <div id="leftInterfaceHeads" class="col-1 interfaceSizing">
-                            <div id="boundaryHead" class="col bgGlassBlue no-padding"><h3>Boundary</h3></div>
-                    </div>
+              <div class="row no-gutters">
+                <div
+                  id="boundaryInterface"
+                  class="col-11 bgGlassBlue interfaceSizing"
+                >
+                  <div id="uploadBoundary" class="col">
+                    <form>
+                      <input
+                        type="file"
+                        id="boundaryFile"
+                        name="boundaryFile"
+                      />
+                      <input
+                        type="submit"
+                        id="boundarySubmit"
+                        name="boundarySubmit"
+                      />
+                    </form>
+                  </div>
                 </div>
+                <div id="leftInterfaceHeads" class="col-1 interfaceSizing">
+                  <div id="boundaryHead" class="col bgGlassBlue no-padding">
+                    <h3>Boundary</h3>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
           <!--Extra Map Controls-->
           <div class="row no-gutters">
             <div id="mapStyle" class="col-4 onTop">

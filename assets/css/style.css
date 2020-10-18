@@ -106,9 +106,9 @@ body {
     margin: 5vh 0;
 }
 
-/*#boundaryInterface, #linesInterface, #statsInterface {
+#boundaryInterface, #linesInterface, #statsInterface {
     display: none;
-}*/
+}
 
 #boundaryHead, #linesHead {
     height: 37.5vh;
