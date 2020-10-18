@@ -50,11 +50,21 @@ $("document").ready(function () {
         document.getElementById("toolbar").appendChild(draw.onAdd(map));
 
         map.on('draw.create', getPolygon);
+        //map.on()
 
         function getPolygon(e) {
             let data = draw.getAll();
+            let collectedFeatures = (data.features);
+            //console.log(collectedFeatures);
+            for (let feature of collectedFeatures) {
+                if (feature.geometry.type === "Polygon")
+                console.log(feature);
+            };
             let polygonCoords = (data.features[0].geometry.coordinates[0]);
-            console.log(polygonCoords);
+            let polygonTarget = (data.features[0].geometry.type);
+            //console.log(polygonCoords);
+           // console.log(data);
+           // console.log(polygonTarget);
         };
     });
 
