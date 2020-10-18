@@ -49,8 +49,40 @@ $("document").ready(function () {
     });
     document.getElementById("toolbar").appendChild(draw.onAdd(map));
 
+    map.on("draw.create", deleteExistingBoundary);
+    
+    //Function to delete old polygons before drawing new ones
+    function deleteExistingBoundary(e) {
+      let data = draw.getAll();
+      let collectedFeatures = data.features;
+      //For of loop to only target Polygon Features
+      function polygonTarget() {
+        for (let feature of collectedFeatures) {
+          if (feature.geometry.type === "Polygon") {
+            let polygonId = feature.id;
+            return polygonId;
+          }
+        }
+      }
+      polygonTarget();
+      let boundaryId = polygonTarget();
+      function deleteExistingPolygon(e) {
+        let i = 0;
+        for (let feature of collectedFeatures) {
+            if (feature.geometry.type === "Polygon") {
+            i++;
+          } 
+        }
+        if (i > 1) {
+            draw.delete(boundaryId);
+        }
+      }
+      deleteExistingPolygon();
+    }
+
     map.on("draw.create", getPolygon);
-    //map.on()
+    map.on("draw.delete", getPolygon);
+    map.on("draw.update", getPolygon);
 
     function getPolygon(e) {
       let data = draw.getAll();
@@ -66,7 +98,6 @@ $("document").ready(function () {
       }
       polygonTarget();
       let boundary = polygonTarget();
-      console.log(boundary);
     }
   });
 
