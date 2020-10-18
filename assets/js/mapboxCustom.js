@@ -48,7 +48,17 @@ $("document").ready(function () {
             displayControlsDefault: true,
         });
         document.getElementById("toolbar").appendChild(draw.onAdd(map));
+
+        map.on('draw.create', getPolygon);
+
+        function getPolygon(e) {
+            let data = draw.getAll();
+            let polygonCoords = (data.features[0].geometry.coordinates[0]);
+            console.log(polygonCoords);
+        };
     });
+
+    
     
     // Show cursor location. Inspired by Mapbox GL API documentation
     function reportCursorPos() {
