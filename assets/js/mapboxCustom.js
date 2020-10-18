@@ -49,13 +49,14 @@ $("document").ready(function () {
     });
     document.getElementById("toolbar").appendChild(draw.onAdd(map));
 
+    //Only allow 1x Polygon to exist
     map.on("draw.create", deleteExistingBoundary);
     
     //Function to delete old polygons before drawing new ones
     function deleteExistingBoundary(e) {
       let data = draw.getAll();
       let collectedFeatures = data.features;
-      //For of loop to only target Polygon Features
+      //For of loop to only target Polygon Features and return the ID of the polygon
       function polygonTarget() {
         for (let feature of collectedFeatures) {
           if (feature.geometry.type === "Polygon") {
@@ -66,6 +67,7 @@ $("document").ready(function () {
       }
       polygonTarget();
       let boundaryId = polygonTarget();
+      //For loop to count the number of polygon objects
       function deleteExistingPolygon(e) {
         let i = 0;
         for (let feature of collectedFeatures) {
@@ -73,6 +75,7 @@ $("document").ready(function () {
             i++;
           } 
         }
+        //If more than one polygon exists the ID obtained eariler is used to target the older polygon and delete it
         if (i > 1) {
             draw.delete(boundaryId);
         }
@@ -80,6 +83,7 @@ $("document").ready(function () {
       deleteExistingPolygon();
     }
 
+    //Obtain Polygon Geometry
     map.on("draw.create", getPolygon);
     map.on("draw.delete", getPolygon);
     map.on("draw.update", getPolygon);
@@ -97,6 +101,7 @@ $("document").ready(function () {
         }
       }
       polygonTarget();
+      //Boundary Variable containing the coordinate array of the polygon
       let boundary = polygonTarget();
     }
   });
