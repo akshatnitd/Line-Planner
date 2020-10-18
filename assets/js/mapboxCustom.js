@@ -106,9 +106,9 @@ $("document").ready(function () {
       console.log(boundary);
       
       function writeBoundaryToTable() {
+        $("#boundaryCoords>table>tbody>tr").siblings(".vertices").remove();
         for (let vertices of boundary) {
-            console.log(vertices);
-            $("#boundaryCoords>table>tbody").append("<tr><td>" + vertices[1] + "</td><td>" + vertices[0] + "</td></tr>");
+            $("#boundaryCoords>table>tbody").append("<tr class='vertices'><td>" + vertices[1] + "</td><td>" + vertices[0] + "</td></tr>");
         }
       }
       writeBoundaryToTable();
