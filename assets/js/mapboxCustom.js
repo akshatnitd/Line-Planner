@@ -103,12 +103,11 @@ $("document").ready(function () {
       polygonTarget();
       //Boundary Variable containing the coordinate array of the polygon
       let boundary = polygonTarget();
-      console.log(boundary);
       
       function writeBoundaryToTable() {
-        $("#boundaryCoords>table>tbody>tr").siblings(".vertices").remove();
+        $("#boundaryCoords>table>tbody>tr").remove();
         for (let vertices of boundary) {
-            $("#boundaryCoords>table>tbody").append("<tr class='vertices'><td>" + vertices[1] + "</td><td>" + vertices[0] + "</td></tr>");
+            $("#boundaryCoords>table>tbody").append("<tr><td>" + vertices[1].toFixed(7) + "</td><td>" + vertices[0].toFixed(7) + "</td></tr>");
         }
       }
       writeBoundaryToTable();

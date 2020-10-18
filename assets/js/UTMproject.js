@@ -17,5 +17,22 @@ $(document).ready(function(){
             '<p class="no-margin">' + '<span>EASTING: ' + easting.toFixed(2) + '</span>' + '</p>'
         document.getElementById("cursorUtmZone").innerHTML =
             '<p class="no-margin">' + '<span> UTM ' + zone + ' ' + hemi + '</span>' + '</p>'
+    
+        function boundaryToUtm () {
+            let boundTableLat = $("#boundaryCoords>table>tbody>tr>td").first().html();
+            let boundTableLong = $("#boundaryCoords>table>tbody>tr>td").last().html();
+            let boundTableLatLong = new LatLon(boundTableLat, boundTableLong);
+            let boundTableUTM = boundTableLatLong.toUtm();
+            let boundNorthing = boundTableUTM["northing"];
+            let boundEasting = boundTableUTM["easting"];
+            
+            function writeBoundUtmToTable() {
+                $("#boundaryCoords>table>tbody>tr>td").siblings(".projected").remove();
+                $("#boundaryCoords>table>tbody>tr>td").append("<td class='projected'>"+ boundNorthing + "</td><td>" + boundEasting + "</td>");
+            };
+            writeBoundUtmToTable();
+        };
+        boundaryToUtm();
     });
+    
 })
