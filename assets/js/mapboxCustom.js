@@ -9,19 +9,19 @@ $("document").ready(function () {
     zoom: 11, // starting zoom
     logoPosition: "top-right",
   });
-// Map type dropdown selector listener and setter
-  $("#mapStyles").click( function setLayer() {
-    $("#mapStyles").change(function(event) { 
-        let layerId = $(this).val()
-        switchLayer(layerId);
-    })
-  })
+  // Map type dropdown selector listener and setter
+  $("#mapStyles").click(function setLayer() {
+    $("#mapStyles").change(function (event) {
+      let layerId = $(this).val();
+      switchLayer(layerId);
+    });
+  });
 
-// Code inspiration from mapbox API documentation, modified to work on a dropdown
-  function switchLayer (setId) {
-    map.setStyle('mapbox://styles/mapbox/' + setId);
+  // Code inspiration from mapbox API documentation, modified to work on a dropdown
+  function switchLayer(setId) {
+    map.setStyle("mapbox://styles/mapbox/" + setId);
   }
- 
+
   let navControl = new mapboxgl.NavigationControl({
     showZoom: false,
     visualizePitch: true,
@@ -43,59 +43,75 @@ $("document").ready(function () {
   document.getElementById("toolbar").appendChild(userLocation.onAdd(map));
   map.addControl(scale, "bottom-right");
 
-    map.on("load", function(){
-        let draw = new MapboxDraw({
-            displayControlsDefault: true,
-        });
-        document.getElementById("toolbar").appendChild(draw.onAdd(map));
-
-        map.on('draw.create', getPolygon);
-        //map.on()
-
-        function getPolygon(e) {
-            let data = draw.getAll();
-            let collectedFeatures = (data.features);
-            //console.log(collectedFeatures);
-            for (let feature of collectedFeatures) {
-                if (feature.geometry.type === "Polygon")
-                console.log(feature);
-            };
-            let polygonCoords = (data.features[0].geometry.coordinates[0]);
-            let polygonTarget = (data.features[0].geometry.type);
-            //console.log(polygonCoords);
-           // console.log(data);
-           // console.log(polygonTarget);
-        };
+  map.on("load", function () {
+    let draw = new MapboxDraw({
+      displayControlsDefault: true,
     });
+    document.getElementById("toolbar").appendChild(draw.onAdd(map));
 
-    
-    
-    // Show cursor location. Inspired by Mapbox GL API documentation
-    function reportCursorPos() {
-        map.on("mousemove", function(e) {
-            let longitude = JSON.stringify(e.lngLat["lng"]);
-            let latitude = JSON.stringify(e.lngLat["lat"]);
-            document.getElementById("cursorLat").innerHTML =
-            // e.lngLat is the longitude, latitude geographical position of the mousemove event.
-            // Latitude and Longitude targeted specifically and reported into separate elements.
-            '<p class="no-margin">LAT: ' + '<span>' + parseFloat(latitude).toFixed(7) + '</span>' + '</p>'
-            document.getElementById("cursorLong").innerHTML =
-            '<p class="no-margin">LONG: ' + '<span>' +  parseFloat(longitude).toFixed(7) + '</span>' + '</p>'
-        });
-    };
-    reportCursorPos();
-    //On touch end the footer reports the last touch position in Lat and Long. 
-    function reportLastTouchPos() {
-        map.on("touchend", function(e) {
-            let longitude = JSON.stringify(e.lngLat["lng"]);
-            let latitude = JSON.stringify(e.lngLat["lat"]);
-            document.getElementById("cursorLat").innerHTML =
-            // e.lngLat is the longitude, latitude geographical position of the mousemove event.
-            // Latitude and Longitude targeted specifically and reported into separate elements.
-            '<p class="no-margin">LAT: ' + '<span>' + parseFloat(latitude).toFixed(7) + '</span>' + '</p>'
-            document.getElementById("cursorLong").innerHTML =
-            '<p class="no-margin">LONG: ' + '<span>' +  parseFloat(longitude).toFixed(7) + '</span>' + '</p>'
-        });
-    };
-    reportLastTouchPos();
+    map.on("draw.create", getPolygon);
+    //map.on()
+
+    function getPolygon(e) {
+      let data = draw.getAll();
+      let collectedFeatures = data.features;
+      //For of loop to only target Polygon Features
+      function polygonTarget() {
+        for (let feature of collectedFeatures) {
+          if (feature.geometry.type === "Polygon") {
+            let polygonCoords = feature.geometry.coordinates[0];
+            return polygonCoords;
+          }
+        }
+      }
+      polygonTarget();
+      let boundary = polygonTarget();
+      console.log(boundary);
+    }
+  });
+
+  // Show cursor location. Inspired by Mapbox GL API documentation
+  function reportCursorPos() {
+    map.on("mousemove", function (e) {
+      let longitude = JSON.stringify(e.lngLat["lng"]);
+      let latitude = JSON.stringify(e.lngLat["lat"]);
+      document.getElementById("cursorLat").innerHTML =
+        // e.lngLat is the longitude, latitude geographical position of the mousemove event.
+        // Latitude and Longitude targeted specifically and reported into separate elements.
+        '<p class="no-margin">LAT: ' +
+        "<span>" +
+        parseFloat(latitude).toFixed(7) +
+        "</span>" +
+        "</p>";
+      document.getElementById("cursorLong").innerHTML =
+        '<p class="no-margin">LONG: ' +
+        "<span>" +
+        parseFloat(longitude).toFixed(7) +
+        "</span>" +
+        "</p>";
+    });
+  }
+  reportCursorPos();
+  //On touch end the footer reports the last touch position in Lat and Long.
+  function reportLastTouchPos() {
+    map.on("touchend", function (e) {
+      let longitude = JSON.stringify(e.lngLat["lng"]);
+      let latitude = JSON.stringify(e.lngLat["lat"]);
+      document.getElementById("cursorLat").innerHTML =
+        // e.lngLat is the longitude, latitude geographical position of the mousemove event.
+        // Latitude and Longitude targeted specifically and reported into separate elements.
+        '<p class="no-margin">LAT: ' +
+        "<span>" +
+        parseFloat(latitude).toFixed(7) +
+        "</span>" +
+        "</p>";
+      document.getElementById("cursorLong").innerHTML =
+        '<p class="no-margin">LONG: ' +
+        "<span>" +
+        parseFloat(longitude).toFixed(7) +
+        "</span>" +
+        "</p>";
+    });
+  }
+  reportLastTouchPos();
 });
