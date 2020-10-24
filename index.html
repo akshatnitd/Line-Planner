@@ -63,7 +63,7 @@
       src="assets/js/interfaceCollapse.js"
     ></script>
     <script type="text/javascript" src="assets/js/fileUploads.js"></script>
-
+    <script type="text/javascript" src="assets/js/exportCSV.js"></script>
     <!--Jasmine Testing-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.js"
@@ -147,6 +147,16 @@
                       </tbody>
                     </table>
                   </div>
+                  <div id="exportBoundary" class="col">
+                      <button
+                        id="boundaryExportGeo"
+                        name="boundaryExportGeo"
+                      >Export Geodetic Coords to CSV</button>
+                      <button
+                        id="boundaryExportProjected"
+                        name="boundaryExportProjected"
+                      >Export Projected Coords to CSV</button>
+                </div>
                 </div>
                 <div id="leftInterfaceHeads" class="col-1 interfaceSizing">
                   <div id="boundaryHead" class="col bgGlassBlue no-padding">
