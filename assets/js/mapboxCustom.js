@@ -122,14 +122,10 @@ $("document").ready(function () {
       //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
       function simEnter() {
         x = $.Event('keydown');
-        x.keyCode= 13; // enter
+        x.keyCode= 13; //Enter Key
         $('input').trigger(x);
       } 
       simEnter();
-      
-
-      //let x = document.createEvent("EnterEvent");
-      //x.initEnterEvent("onkeydown", true);
     }
   });
 

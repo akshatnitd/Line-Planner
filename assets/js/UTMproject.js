@@ -33,54 +33,56 @@ $(document).ready(function () {
       "</p>";
   });
 
-  $(document).on("keydown", function () {
-    //Code to turn boundary table data into an array
-    //Code inspiration from Stack Overflow user Andreas Eriksson posted March 6th 2012
-    function boundaryTableToArray() {
-      let boundaryTableArray = [];
-      $("#boundaryTable tr").each(function () {
-        let arrayOfThisVertices = [];
-        let tableData = $(this).find("td");
-        if (tableData.length > 0) {
-          tableData.each(function () {
-            arrayOfThisVertices.push($(this).text());
-          });
-          boundaryTableArray.push(arrayOfThisVertices);
-        }
-      });
-      return boundaryTableArray;
-    }
-    boundaryTableToArray();
-    //Function that uses this array and iterates through to convert coordinates for LAT LONG to Easting and Northing.
+  $(document).on("keydown", function (event) {
+    if (event.keyCode === 13) {
+      //Code to turn boundary table data into an array
+      //Code inspiration from Stack Overflow user Andreas Eriksson posted March 6th 2012
+      function boundaryTableToArray() {
+        let boundaryTableArray = [];
+        $("#boundaryTable tr").each(function () {
+          let arrayOfThisVertices = [];
+          let tableData = $(this).find("td");
+          if (tableData.length > 0) {
+            tableData.each(function () {
+              arrayOfThisVertices.push($(this).text());
+            });
+            boundaryTableArray.push(arrayOfThisVertices);
+          }
+        });
+        return boundaryTableArray;
+      }
+      boundaryTableToArray();
+      //Function that uses this array and iterates through to convert coordinates for LAT LONG to Easting and Northing.
 
-    function convertBoundaryTableArrayToUtm() {
-      let projectedArray = [];
-      for (let geodeticCoords of boundaryTableToArray()) {
-        let boundTableLatLong = new LatLon(
-          geodeticCoords[0],
-          geodeticCoords[1]
-        );
-        let boundTableUTM = boundTableLatLong.toUtm();
-        let boundNorthing = boundTableUTM["northing"];
-        let boundEasting = boundTableUTM["easting"];
-        let arrayOfThisProjected = [];
-        arrayOfThisProjected.push(boundNorthing, boundEasting);
-        projectedArray.push(arrayOfThisProjected);
-      }
-      function writeBoundUtmToTable() {
-        $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
-        for (let projectedVertices of projectedArray) {
-          $("#boundaryCoords>#boundaryConverted>tbody").append(
-            "<tr><td>" +
-              projectedVertices[0].toFixed(2) +
-              "</td><td>" +
-              projectedVertices[1].toFixed(2) +
-              "</td></tr>"
+      function convertBoundaryTableArrayToUtm() {
+        let projectedArray = [];
+        for (let geodeticCoords of boundaryTableToArray()) {
+          let boundTableLatLong = new LatLon(
+            geodeticCoords[0],
+            geodeticCoords[1]
           );
+          let boundTableUTM = boundTableLatLong.toUtm();
+          let boundNorthing = boundTableUTM["northing"];
+          let boundEasting = boundTableUTM["easting"];
+          let arrayOfThisProjected = [];
+          arrayOfThisProjected.push(boundNorthing, boundEasting);
+          projectedArray.push(arrayOfThisProjected);
         }
+        function writeBoundUtmToTable() {
+          $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
+          for (let projectedVertices of projectedArray) {
+            $("#boundaryCoords>#boundaryConverted>tbody").append(
+              "<tr><td>" +
+                projectedVertices[0].toFixed(2) +
+                "</td><td>" +
+                projectedVertices[1].toFixed(2) +
+                "</td></tr>"
+            );
+          }
+        }
+        writeBoundUtmToTable();
       }
-      writeBoundUtmToTable();
+      convertBoundaryTableArrayToUtm();
     }
-    convertBoundaryTableArrayToUtm();
   });
 });
