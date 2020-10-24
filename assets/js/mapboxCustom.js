@@ -51,7 +51,7 @@ $("document").ready(function () {
 
     //Only allow 1x Polygon to exist
     map.on("draw.create", deleteExistingBoundary);
-    
+
     //Function to delete old polygons before drawing new ones
     function deleteExistingBoundary(e) {
       let data = draw.getAll();
@@ -71,13 +71,13 @@ $("document").ready(function () {
       function deleteExistingPolygon(e) {
         let i = 0;
         for (let feature of collectedFeatures) {
-            if (feature.geometry.type === "Polygon") {
+          if (feature.geometry.type === "Polygon") {
             i++;
-          } 
+          }
         }
         //If more than one polygon exists the ID obtained eariler is used to target the older polygon and delete it
         if (i > 1) {
-            draw.delete(boundaryId);
+          draw.delete(boundaryId);
         }
       }
       deleteExistingPolygon();
@@ -103,14 +103,33 @@ $("document").ready(function () {
       polygonTarget();
       //Boundary Variable containing the coordinate array of the polygon
       let boundary = polygonTarget();
-      
+
       function writeBoundaryToTable() {
         $("#boundaryCoords>#boundaryTable>tbody>tr").remove();
         for (let vertices of boundary) {
-            $("#boundaryCoords>#boundaryTable>tbody").append("<tr><td>" + vertices[1].toFixed(7) + "</td><td>" + vertices[0].toFixed(7) + "</td></tr>");
+          $("#boundaryCoords>#boundaryTable>tbody").append(
+            "<tr><td>" +
+              vertices[1].toFixed(7) +
+              "</td><td>" +
+              vertices[0].toFixed(7) +
+              "</td></tr>"
+          );
         }
       }
       writeBoundaryToTable();
+      
+      //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.
+      //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
+      function simEnter() {
+        x = $.Event('keydown');
+        x.keyCode= 13; // enter
+        $('input').trigger(x);
+      } 
+      simEnter();
+      
+
+      //let x = document.createEvent("EnterEvent");
+      //x.initEnterEvent("onkeydown", true);
     }
   });
 
