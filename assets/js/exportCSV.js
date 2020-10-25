@@ -13,8 +13,20 @@ $("document").ready(function () {
 
         csv.push(row.join(","));
       }
+      downloadBoundaryGeoCSV(csv.join("\n"));
     }
     exportBoundaryGeoToCSV();
+    function downloadBoundaryGeoCSV(csv) {
+        let csvFile;
+        let downloadLink;
+        csvFile = new Blob([csv], {type: "text.csv"});
+        downloadLink = document.createElement("a");
+        downloadLink.download = "boundaryExportGeodetic.csv";
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+    }
   });
   $("#boundaryExportProjected").click(function () {
     function exportBoundaryProjectedToCSV() {
