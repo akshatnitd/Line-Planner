@@ -16,7 +16,15 @@ $("document").ready(function () {
             reader.onload = function(e) {
                 let readBoundaryResult = reader.result;
                 console.log(readBoundaryResult);
+                textToArray(readBoundaryResult);
             }
+        }
+        //Function to turn text string into an array, splitting by newline.
+        function textToArray (textToSplit) {
+            let importedBoundaryArray = [];
+            let importedBoundarySplit = textToSplit.split("\n");
+            importedBoundaryArray.push(importedBoundarySplit);
+            console.log(importedBoundaryArray);
         }
     });
 });
