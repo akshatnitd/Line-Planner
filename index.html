@@ -63,6 +63,7 @@
       src="assets/js/interfaceCollapse.js"
     ></script>
     <script type="text/javascript" src="assets/js/fileUploads.js"></script>
+    <script type="text/javascript" src="assets/js/importCSV.js"></script>
     <script type="text/javascript" src="assets/js/exportCSV.js"></script>
     <!--Jasmine Testing-->
     <script
@@ -113,18 +114,15 @@
                   class="col-11 bgGlassBlue interfaceSizing"
                 >
                   <div id="uploadBoundary" class="col">
-                    <form>
                       <input
                         type="file"
                         id="boundaryFile"
                         name="boundaryFile"
                       />
-                      <input
-                        type="submit"
+                      <button
                         id="boundarySubmit"
                         name="boundarySubmit"
-                      />
-                    </form>
+                      >Load File</button>
                   </div>
                   <div id="boundaryCoords" class="col">
                     <table id="boundaryTable" class="col-6 d-inline">
