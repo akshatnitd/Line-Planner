@@ -1,5 +1,10 @@
+function importedCsvBoundaryToDraw (importedBoundary) {
+        let csvBoundary = (importedBoundary);
+        console.log(csvBoundary);
+}
+
 $("document").ready(function () {
-  mapboxgl.accessToken =
+    mapboxgl.accessToken =
     "pk.eyJ1Ijoia3dzbmljayIsImEiOiJja2UzMDY3eDAwZWZvMnlwZHk2bWJ3OXkxIn0.prNYik8MEfEYiueN0vP58Q";
 
   let map = new mapboxgl.Map({
@@ -174,3 +179,4 @@ $("document").ready(function () {
   }
   reportLastTouchPos();
 });
+    

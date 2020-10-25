@@ -1,5 +1,6 @@
 $("document").ready(function () {
     //Function to read selected file is called when the "Load File" button is clicked.
+    importedBoundaryGeoJSON = {};
     $("#boundarySubmit").click(function(){
         //Assigns the chosen file to "csvInput" variable.
         function boundaryImport () {
@@ -41,18 +42,20 @@ $("document").ready(function () {
                 }
                 //Pushes the combined coordinate as nested arrays within a master array for the boundary. 
                 vertexBoundaryArray.push(vertexArray);
-                boundaryArrayToGeoJSON(vertexBoundaryArray);
             }
+            boundaryArrayToGeoJSON(vertexBoundaryArray);
         }
         //Creates GeoJSON Object from vertexBoundaryArray.
         function boundaryArrayToGeoJSON (polygonArray) {
-            let importedBoundaryGeoJSON = {};
             importedBoundaryGeoJSON.type ="Feature";
             importedBoundaryGeoJSON.geometry = {};
             importedBoundaryGeoJSON.geometry.type = "Polygon";
             importedBoundaryGeoJSON.geometry.coordinates = polygonArray;
-            console.log(importedBoundaryGeoJSON);
+
         }
-        
+            //console.log(boundaryGeoJSON);
+            //drawImportedBoundary(boundaryGeoJSON);
+    //drawImportedBoundary(boundaryGeoJSON); 
+    importedCsvBoundaryToDraw (importedBoundaryGeoJSON); 
     });
 });
