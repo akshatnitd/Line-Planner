@@ -3,7 +3,6 @@ $("document").ready(function () {
     $("#boundaryExportGeo").click(function () {
     function exportBoundaryGeoToCSV() {
       let csv = [];
-      console.log(csv);
       let rows = document.querySelectorAll("#boundaryTable tr");
 
       for (let i = 0; i < rows.length; i++) {
@@ -31,7 +30,6 @@ $("document").ready(function () {
   $("#boundaryExportProjected").click(function () {
     function exportBoundaryProjectedToCSV() {
       let csv = [];
-      console.log(csv);
       let rows = document.querySelectorAll("#boundaryConverted tr");
 
       for (let i = 0; i < rows.length; i++) {
