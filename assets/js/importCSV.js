@@ -41,7 +41,18 @@ $("document").ready(function () {
                 }
                 //Pushes the combined coordinate as nested arrays within a master array for the boundary. 
                 vertexBoundaryArray.push(vertexArray);
+                boundaryArrayToGeoJSON(vertexBoundaryArray);
             }
         }
+        //Creates GeoJSON Object from vertexBoundaryArray.
+        function boundaryArrayToGeoJSON (polygonArray) {
+            let importedBoundaryGeoJSON = {};
+            importedBoundaryGeoJSON.type ="Feature";
+            importedBoundaryGeoJSON.geometry = {};
+            importedBoundaryGeoJSON.geometry.type = "Polygon";
+            importedBoundaryGeoJSON.geometry.coordinates = polygonArray;
+            console.log(importedBoundaryGeoJSON);
+        }
+        
     });
 });
