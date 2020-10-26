@@ -48,13 +48,11 @@ $("document").ready(function () {
       displayControlsDefault: true,
     });
     document.getElementById("toolbar").appendChild(draw.onAdd(map));
-
+      
     //Draw imported Boundary Polygon
     window.importedCsvBoundaryToDraw = function (importedBoundary) {
-        let polygonGeoJSON = importedBoundary; 
-        draw.add(polygonGeoJSON);
+        draw.add(importedBoundary);
     }
-        
 
     //Only allow 1x Polygon to exist
     map.on("draw.create", deleteExistingBoundary);
