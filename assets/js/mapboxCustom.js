@@ -1,9 +1,4 @@
-function importedCsvBoundaryToDraw (importedBoundary) {
-        let csvBoundary = (importedBoundary);
-        console.log(csvBoundary);
-}
-
-$("document").ready(function () {
+$("document").ready(function () {   
     mapboxgl.accessToken =
     "pk.eyJ1Ijoia3dzbmljayIsImEiOiJja2UzMDY3eDAwZWZvMnlwZHk2bWJ3OXkxIn0.prNYik8MEfEYiueN0vP58Q";
 
@@ -53,6 +48,13 @@ $("document").ready(function () {
       displayControlsDefault: true,
     });
     document.getElementById("toolbar").appendChild(draw.onAdd(map));
+
+    //Draw imported Boundary Polygon
+    window.importedCsvBoundaryToDraw = function (importedBoundary) {
+        let polygonGeoJSON = importedBoundary; 
+        draw.add(polygonGeoJSON);
+    }
+        
 
     //Only allow 1x Polygon to exist
     map.on("draw.create", deleteExistingBoundary);

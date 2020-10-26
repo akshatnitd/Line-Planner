@@ -1,6 +1,6 @@
 $("document").ready(function () {
     //Function to read selected file is called when the "Load File" button is clicked.
-    importedBoundaryGeoJSON = {};
+    importedBoundaryGeoJSON = {"type":"Feature", "properties":{}, "geometry":{"type":"", "coordinates":[]}};
     $("#boundarySubmit").click(function(){
         //Assigns the chosen file to "csvInput" variable.
         function boundaryImport () {
@@ -26,36 +26,31 @@ $("document").ready(function () {
             let importedBoundarySplit = textToSplit.split("\n");
             importedBoundaryArray.push(importedBoundarySplit);
             //Splits Array created from initial newline split by comma, and iterates through each nested array to parse the string as a float, before writing this to a master array of coordinates. 
+            let boundaryArray = [];
             let vertexBoundaryArray = [];
             for (let i = 1; i < importedBoundaryArray[0].length; i++) {
                 let vertexArray = [];
+                let vertexCoords = [];
                 //Splits string array
                 let boundaryArraySplit = importedBoundaryArray[0][i].split(",");
-                for (let j = 0; j < boundaryArraySplit.length; j++) {
-                    let vertexCoords = [];
+                for (let j = boundaryArraySplit.length -1; j >=0; j--) {
                     //Parses each split array element as a floating number. 
                     let vertexParam = parseFloat(boundaryArraySplit[j]);
                     //Pushes lat and long for each coordinate back into thier own array.
                     vertexCoords.push(vertexParam);
-                    //Combined coordinates into a single array for the vertex. 
-                    vertexArray.push(vertexCoords);
                 }
+                //Combined coordinates into a single array for the vertex. 
+                vertexBoundaryArray.push(vertexCoords);
                 //Pushes the combined coordinate as nested arrays within a master array for the boundary. 
-                vertexBoundaryArray.push(vertexArray);
             }
-            boundaryArrayToGeoJSON(vertexBoundaryArray);
+            boundaryArray.push(vertexBoundaryArray);
+            boundaryArrayToGeoJSON(boundaryArray);
         }
         //Creates GeoJSON Object from vertexBoundaryArray.
         function boundaryArrayToGeoJSON (polygonArray) {
-            importedBoundaryGeoJSON.type ="Feature";
-            importedBoundaryGeoJSON.geometry = {};
-            importedBoundaryGeoJSON.geometry.type = "Polygon";
-            importedBoundaryGeoJSON.geometry.coordinates = polygonArray;
-
-        }
-            //console.log(boundaryGeoJSON);
-            //drawImportedBoundary(boundaryGeoJSON);
-    //drawImportedBoundary(boundaryGeoJSON); 
-    importedCsvBoundaryToDraw (importedBoundaryGeoJSON); 
+            importedBoundaryGeoJSON.geometry["coordinates"] = polygonArray;
+            importedBoundaryGeoJSON.geometry["type"] = "Polygon";
+            importedCsvBoundaryToDraw (importedBoundaryGeoJSON);
+        } 
     });
 });
