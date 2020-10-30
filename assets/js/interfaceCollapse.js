@@ -1,6 +1,6 @@
 $("document").ready(function(){
     $("#boundaryHead").click(function(){
-        $("#boundaryInterface").toggle();
+        $("#leftInterface").toggle();
         $("#linesInterface").hide();
     });
     $("#linesHead").click(function(){

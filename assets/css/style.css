@@ -30,8 +30,11 @@ header {
 }
 
 .onTop {
-    position: fixed;
     z-index: 900;
+}
+
+.fixedPosition {
+    position: fixed;
 }
 
 
@@ -91,6 +94,10 @@ h3 {
     width: 50%;
 }
 
+.interfaceHeadWidth {
+    width: 2.5vw;
+}
+
 .noBorder {
     border: none;
 }
@@ -127,7 +134,7 @@ body {
     margin: 5vh 0;
 }
 
-#boundaryInterface, #linesInterface, #statsInterface {
+/*#boundaryInterface, #linesInterface, #statsInterface*/ #leftInterface {
     display: none;
 }
 

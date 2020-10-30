@@ -108,17 +108,22 @@
           <!--Interface Row-->
           <div id="interfaceRow" class="row no-gutters">
             <div id="leftInterface" class="col-3 onTop">
-              <div class="row no-gutters">
                 <div
                   id="boundaryInterface"
-                  class="col-11 bgGlassBlue interfaceSizing"
+                  class="col-12 bgGlassBlue interfaceSizing"
                 >
                   <div id="uploadBoundary" class="col">
-                    <input type="file" id="boundaryFile" name="boundaryFile" class="bgLightBlue fullWidth" />
+                    <input
+                      type="file"
+                      id="boundaryFile"
+                      name="boundaryFile"
+                      class="bgLightBlue fullWidth"
+                    />
                     <div>
                       <details>
-                        <summary class="centerAlign noOutline ">
-                            Import a csv containing Latitude, Longitude fields. <p>Click for for further informaton</p>
+                        <summary class="centerAlign noOutline">
+                          Import a csv containing Latitude, Longitude fields.
+                          <p>Click for for further informaton</p>
                         </summary>
                         <ul>
                           <li>The file must be comma separated (.csv)</li>
@@ -127,16 +132,25 @@
                           <li>Column 2 must be LONG</li>
                           <li>Coordinates must be Geodetic WGS 1984</li>
                           <li>Coordinate Format is (+/-)DD.DDDDDDD</li>
-                          <li>The first and last coordinates must be identical</li>
+                          <li>
+                            The first and last coordinates must be identical
+                          </li>
                         </ul>
                       </details>
                     </div>
-                    <button id="boundarySubmit" name="boundarySubmit" class="centerAlign fullWidth bgDarkBlue lightText noBorder">
+                    <button
+                      id="boundarySubmit"
+                      name="boundarySubmit"
+                      class="centerAlign fullWidth bgDarkBlue lightText noBorder"
+                    >
                       IMPORT
                     </button>
                   </div>
                   <div id="boundaryCoords" class="col centerAlign">
-                    <table id="boundaryTable" class="col-6 d-inline no-gutters no-padding fullWidth">
+                    <table
+                      id="boundaryTable"
+                      class="col-6 d-inline no-gutters no-padding fullWidth"
+                    >
                       <thead class="lightText">
                         <tr>
                           <th class="tableBorder halfWidth">LAT</th>
@@ -145,7 +159,10 @@
                       </thead>
                       <tbody></tbody>
                     </table>
-                    <table id="boundaryConverted" class="col-6 d-inline no-gutters no-padding fullWidth">
+                    <table
+                      id="boundaryConverted"
+                      class="col-6 d-inline no-gutters no-padding fullWidth"
+                    >
                       <thead class="lightText">
                         <tr>
                           <th class="tableBorder halfWidth">NORTHING</th>
@@ -156,7 +173,11 @@
                     </table>
                   </div>
                   <div id="exportBoundary" class="col">
-                    <button id="boundaryExportGeo" name="boundaryExportGeo" class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop">
+                    <button
+                      id="boundaryExportGeo"
+                      name="boundaryExportGeo"
+                      class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop"
+                    >
                       Export Geodetic Coords to CSV
                     </button>
                     <button
@@ -168,17 +189,19 @@
                     </button>
                   </div>
                 </div>
-                <div id="leftInterfaceHeads" class="col-1 interfaceSizing">
-                  <div id="boundaryHead" class="col bgGlassBlue no-padding">
-                    <h3>Boundary</h3>
-                  </div>
-                </div>
+            </div>
+            <div
+              id="leftInterfaceHeads"
+              class="interfaceSizing interfaceHeadWidth onTop"
+            >
+              <div id="boundaryHead" class="col bgGlassBlue no-padding">
+                <h3>Boundary</h3>
               </div>
             </div>
           </div>
           <!--Extra Map Controls-->
           <div class="row no-gutters">
-            <div id="mapStyle" class="col-4 onTop">
+            <div id="mapStyle" class="col-4 fixedPosition onTop">
               <select name="mapStyles" id="mapStyles">
                 <option id="streets-v11" value="streets-v11">Street</option>
                 <option id="light-v10" value="light-v10">Light Mode</option>
