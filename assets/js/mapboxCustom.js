@@ -96,6 +96,7 @@ $("document").ready(function () {
     map.on("draw.update", getPolygon);
 
     function getPolygon(e) {
+      $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
       let data = draw.getAll();
       let collectedFeatures = data.features;
       //For of loop to only target Polygon Features
