@@ -2,10 +2,12 @@ $("document").ready(function(){
     $("#boundaryHead").click(function(){
         $("#leftInterface").toggle();
         $("#linesInterface").hide();
+        $("#boundaryInterface").show();
     });
     $("#linesHead").click(function(){
-         $("#linesInterface").toggle();
+         $("#leftInterface").toggle();
          $("#boundaryInterface").hide();
+         $("#linesInterface").show();
     });
     $("#statsHead").click(function(){
          $("#statsInterface").toggle();

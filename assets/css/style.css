@@ -134,7 +134,7 @@ body {
     margin: 5vh 0;
 }
 
-/*#boundaryInterface, #linesInterface, #statsInterface*/ #leftInterface {
+#boundaryInterface, #linesInterface, #statsInterface, #leftInterface {
     display: none;
 }
 
