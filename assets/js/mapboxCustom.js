@@ -54,8 +54,6 @@ $("document").ready(function () {
         draw.add(importedBoundary);
         deleteExistingBoundary();
         getPolygon();
-        writeBoundaryToTable();
-        simEnter();
     }
 
     //Only allow 1x Polygon to exist
