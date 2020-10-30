@@ -69,7 +69,7 @@ h3 {
     margin: 0;
 }
 
-/*Padding and Margins*/
+/*Padding, Margins and Borders*/
 .no-padding {
     padding: 0;
 }
@@ -85,6 +85,14 @@ h3 {
 
 .fullWidth {
     width: 100%;
+}
+
+.noBorder {
+    border: none;
+}
+
+.marginTop {
+    margin-top: 2.5%;
 }
 
 /*Sizing*/
@@ -119,11 +127,15 @@ body {
 }
 
 .height100 {
-    height: 100%
+    height: 100%;
 }
 
 footer {
     height: 5vh;
+}
+
+#uploadBoundary {
+    padding: 5%;
 }
 
 /*Backgrounds*/
@@ -150,4 +162,12 @@ footer {
 
 .bgDarkGrey {
     background: #373737;
+}
+
+.bgLightBlue {
+    background: #5dcaff;
+}
+
+.bgDarkBlue {
+    background: #006b9b;
 }
