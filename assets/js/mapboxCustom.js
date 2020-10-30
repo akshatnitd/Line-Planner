@@ -52,6 +52,10 @@ $("document").ready(function () {
     //Draw imported Boundary Polygon
     window.importedCsvBoundaryToDraw = function (importedBoundary) {
         draw.add(importedBoundary);
+        deleteExistingBoundary();
+        getPolygon();
+        writeBoundaryToTable();
+        simEnter();
     }
 
     //Only allow 1x Polygon to exist
