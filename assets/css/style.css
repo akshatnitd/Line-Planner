@@ -87,8 +87,17 @@ h3 {
     width: 100%;
 }
 
+.halfWidth {
+    width: 50%;
+}
+
 .noBorder {
     border: none;
+}
+
+.tableBorder {
+    border-left: 1px solid #373737;
+    border-right: 1px solid #373737;
 }
 
 .marginTop {
@@ -171,3 +180,16 @@ footer {
 .bgDarkBlue {
     background: #006b9b;
 }
+
+thead {
+    background: #006b9b;
+}
+
+tbody tr:nth-child(even) {
+    background: #0099cc;
+}
+
+tbody tr:nth-child(odd) {
+    background: #5dcaff;
+}
+

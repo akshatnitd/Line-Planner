@@ -72,9 +72,9 @@ $(document).ready(function () {
           $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
           for (let projectedVertices of projectedArray) {
             $("#boundaryCoords>#boundaryConverted>tbody").append(
-              "<tr><td>" +
+              "<tr><td class='tableBorder'>" +
                 projectedVertices[0].toFixed(2) +
-                "</td><td>" +
+                "</td><td class='tableBorder'>" +
                 projectedVertices[1].toFixed(2) +
                 "</td></tr>"
             );

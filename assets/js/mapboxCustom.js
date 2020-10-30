@@ -115,9 +115,9 @@ $("document").ready(function () {
         $("#boundaryCoords>#boundaryTable>tbody>tr").remove();
         for (let vertices of boundary) {
           $("#boundaryCoords>#boundaryTable>tbody").append(
-            "<tr><td>" +
+            "<tr><td class='tableBorder'>" +
               vertices[1].toFixed(7) +
-              "</td><td>" +
+              "</td><td class='tableBorder'>" +
               vertices[0].toFixed(7) +
               "</td></tr>"
           );
