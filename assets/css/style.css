@@ -181,15 +181,15 @@ footer {
     background: #006b9b;
 }
 
-thead {
+#boundaryTable thead, #boundaryConverted thead {
     background: #006b9b;
 }
 
-tbody tr:nth-child(even) {
+#boundaryTable tbody tr:nth-child(even), #boundaryConverted tbody tr:nth-child(even) {
     background: #0099cc;
 }
 
-tbody tr:nth-child(odd) {
+#boundaryTable tbody tr:nth-child(odd), #boundaryConverted tbody tr:nth-child(odd) {
     background: #5dcaff;
 }
 
