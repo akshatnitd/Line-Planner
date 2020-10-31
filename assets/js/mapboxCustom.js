@@ -157,20 +157,22 @@ $("document").ready(function () {
             lineFeaturesArray.push(lineCoords);
           }
         }
-        return(lineFeaturesArray);
+        return lineFeaturesArray;
       }
-      console.log(lineTarget());
       lineTarget();
       //Boundary Variable containing the coordinate array of the polygon
-      let line = lineTarget();
-      console.log(line);
+      let lines = lineTarget();
+      console.log(lines);
 
-      /*function writeLineToTable() {
-          $("#lineCoords>#lineTable>tbody>tr").remove();
-        if (typeof line !== "undefined") {
+      function writeLineToTable() {
+        $("#lineCoords>#lineTable>tbody>tr").remove();
+        if (typeof lines !== "undefined") {
+          for (let i = 0; i < lines.length; i++) {
+            let lineId = i + 1;
+            let line = lines[i];
             $("#lineCoords>#lineTable>tbody").append(
               "<tr><td class='tableBorder'>" +
-                "ID#" +
+                lineId +
                 "</td><td class='tableBorder'>" +
                 line[0][1].toFixed(7) +
                 "</td><td class='tableBorder'>" +
@@ -181,21 +183,12 @@ $("document").ready(function () {
                 "</td><td class='tableBorder'>" +
                 line[1][0].toFixed(7) +
                 "</td></tr>"
-            )
-          for (let vertices of line) {
-              console.log(vertices);
-            $("#lineCoords>#lineTable>tbody").append(
-              "<tr><td class='tableBorder'>" +
-                vertices[1].toFixed(7) +
-                "</td><td class='tableBorder'>" +
-                vertices[0].toFixed(7) +
-                "</td></tr>"
-            )
+            );
           }
         }
       }
 
-      writeLineToTable();*/
+      writeLineToTable();
 
       //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.
       //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
