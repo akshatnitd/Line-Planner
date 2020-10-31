@@ -212,7 +212,7 @@
                     type="file"
                     id="linesFile"
                     name="linesFile"
-                    class="bgLightBlue fullWidth"
+                    class="bgLightGreen fullWidth"
                   />
                   <div>
                     <details>
@@ -236,9 +236,55 @@
                   <button
                     id="linesSubmit"
                     name="linesSubmit"
-                    class="centerAlign fullWidth bgDarkBlue lightText noBorder"
+                    class="centerAlign fullWidth bgDarkGreen lightText noBorder"
                   >
                     IMPORT
+                  </button>
+                </div>
+                <div id="lineCoords" class="col centerAlign">
+                  <table
+                    id="lineTable"
+                    class="col-12 d-inline no-gutters no-padding fullWidth"
+                  >
+                    <thead class="lightText">
+                      <tr>
+                        <th class="tableBorder quarterWidth">LAT1</th>
+                        <th class="tableBorder quarterWidth">LONG1</th>
+                        <th class="tableBorder quarterWidth">LAT2</th>
+                        <th class="tableBorder quarterWidth">LONG2</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <!--<table
+                    id="lineConverted"
+                    class="col-12 d-inline no-gutters no-padding fullWidth"
+                  >
+                    <thead class="lightText">
+                      <tr>
+                        <th class="tableBorder quarterWidth">NORTHING1</th>
+                        <th class="tableBorder quarterWidth">EASTING1</th>
+                        <th class="tableBorder quarterWidth">NORTHING2</th>
+                        <th class="tableBorder quarterWidth">EASTING2</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>-->
+                </div>
+                <div id="exportlines" class="col">
+                  <button
+                    id="lineExportGeo"
+                    name="lineExportGeo"
+                    class="centerAlign fullWidth bgDarkGreen lightText noBorder marginTop"
+                  >
+                    Export Geodetic Coords to CSV
+                  </button>
+                  <button
+                    id="lineExportProjected"
+                    name="lineExportProjected"
+                    class="centerAlign fullWidth bgDarkGreen lightText noBorder marginTop"
+                  >
+                    Export Projected Coords to CSV
                   </button>
                 </div>
               </div>
