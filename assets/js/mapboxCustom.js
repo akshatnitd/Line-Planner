@@ -94,7 +94,7 @@ $("document").ready(function () {
     map.on("draw.create", getPolygon);
     map.on("draw.delete", getPolygon);
     map.on("draw.update", getPolygon);
-
+    //Function to find polygon in featureCollection
     function getPolygon(e) {
       $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
       let data = draw.getAll();
@@ -111,6 +111,7 @@ $("document").ready(function () {
       polygonTarget();
       //Boundary Variable containing the coordinate array of the polygon
       let boundary = polygonTarget();
+      console.log(boundary);
 
       function writeBoundaryToTable() {
         $("#boundaryCoords>#boundaryTable>tbody>tr").remove();
@@ -128,6 +129,56 @@ $("document").ready(function () {
       }
 
       writeBoundaryToTable();
+
+      //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.
+      //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
+      function simEnter() {
+        x = $.Event("keydown");
+        x.keyCode = 13; //Enter Key
+        $("input").trigger(x);
+      }
+      simEnter();
+    }
+
+    //Obtain Line Geometry
+    map.on("draw.create", getLineString);
+    map.on("draw.delete", getLineString);
+    map.on("draw.update", getLineString);
+    //Function to find line strings in featureCollection
+    function getLineString(e) {
+      let data = draw.getAll();
+      console.log(data);
+      let collectedFeatures = data.features;
+      //For of loop to only target Polygon Features
+      function lineTarget() {
+        for (let feature of collectedFeatures) {
+          if (feature.geometry.type === "LineString") {
+            let lineCoords = feature.geometry.coordinates;
+            return lineCoords;
+          }
+        }
+      }
+      console.log(lineTarget());
+      lineTarget();
+      //Boundary Variable containing the coordinate array of the polygon
+      let line = lineTarget();
+      console.log(line);
+
+      function writeLineToTable() {
+        if (typeof line !== "undefined") {
+          for (let vertices of line) {
+            $("#lineCoords>#lineTable>tbody").append(
+              "<tr><td class='tableBorder'>" +
+                vertices[1].toFixed(7) +
+                "</td><td class='tableBorder'>" +
+                vertices[0].toFixed(7) +
+                "</td></tr>"
+            );
+          }
+        }
+      }
+
+      writeLineToTable();
 
       //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.
       //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
