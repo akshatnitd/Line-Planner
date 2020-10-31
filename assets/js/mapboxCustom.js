@@ -147,16 +147,17 @@ $("document").ready(function () {
     //Function to find line strings in featureCollection
     function getLineString(e) {
       let data = draw.getAll();
-      console.log(data);
       let collectedFeatures = data.features;
-      //For of loop to only target Polygon Features
+      //For of loop to only target Line String Features
       function lineTarget() {
+        let lineFeaturesArray = [];
         for (let feature of collectedFeatures) {
           if (feature.geometry.type === "LineString") {
             let lineCoords = feature.geometry.coordinates;
-            return lineCoords;
+            lineFeaturesArray.push(lineCoords);
           }
         }
+        return(lineFeaturesArray);
       }
       console.log(lineTarget());
       lineTarget();
@@ -164,21 +165,37 @@ $("document").ready(function () {
       let line = lineTarget();
       console.log(line);
 
-      function writeLineToTable() {
+      /*function writeLineToTable() {
+          $("#lineCoords>#lineTable>tbody>tr").remove();
         if (typeof line !== "undefined") {
+            $("#lineCoords>#lineTable>tbody").append(
+              "<tr><td class='tableBorder'>" +
+                "ID#" +
+                "</td><td class='tableBorder'>" +
+                line[0][1].toFixed(7) +
+                "</td><td class='tableBorder'>" +
+                line[0][0].toFixed(7) +
+                "</td>" +
+                "<td class='tableBorder'>" +
+                line[1][1].toFixed(7) +
+                "</td><td class='tableBorder'>" +
+                line[1][0].toFixed(7) +
+                "</td></tr>"
+            )
           for (let vertices of line) {
+              console.log(vertices);
             $("#lineCoords>#lineTable>tbody").append(
               "<tr><td class='tableBorder'>" +
                 vertices[1].toFixed(7) +
                 "</td><td class='tableBorder'>" +
                 vertices[0].toFixed(7) +
                 "</td></tr>"
-            );
+            )
           }
         }
       }
 
-      writeLineToTable();
+      writeLineToTable();*/
 
       //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.
       //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
