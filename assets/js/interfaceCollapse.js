@@ -1,11 +1,11 @@
 $("document").ready(function(){
     $("#boundaryHead").click(function(){
-        $("#leftInterface").toggle();
         $("#leftInterfaceB").hide();
+        $("#leftInterface").toggle();
     });
     $("#linesHead").click(function(){
+        $("#leftInterface").hide();
          $("#leftInterfaceB").toggle();
-         $("#leftInterface").hide();
     });
     $("#statsHead").click(function(){
          $("#statsInterface").toggle();

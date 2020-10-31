@@ -37,6 +37,10 @@ header {
     position: fixed;
 }
 
+.fixedTop {
+    top: 5vh;
+}
+
 
 /*Fonts and Text Sizing*/
 body, #mapStyle {
@@ -86,18 +90,6 @@ h3 {
     bottom: 7vh;
 }
 
-.fullWidth {
-    width: 100%;
-}
-
-.halfWidth {
-    width: 50%;
-}
-
-.interfaceHeadWidth {
-    width: 2.5vw;
-}
-
 .noBorder {
     border: none;
 }
@@ -121,6 +113,14 @@ body {
     max-width: 100vw;
 }
 
+.fullWidth {
+    width: 100%;
+}
+
+.halfWidth {
+    width: 50%;
+}
+
 #logo img {
     width: 10rem;
 }
@@ -129,9 +129,12 @@ body {
     height: 95vh;
 }
 
-.interfaceSizing {
+.interfaceHeight {
     height: 85vh;
-    margin: 5vh 0;
+}
+
+.interfaceWidth {
+    width: 25vw;
 }
 
 /*#boundaryInterface, #linesInterface,*/ #statsInterface, #leftInterface, #leftInterfaceB {

@@ -105,13 +105,28 @@
             </div>
             <div id="toolbar" class="col-6 offset-4 bgGlassSmoke"></div>
           </header>
-          <!--Interface Row-->
-          <div id="interfaceRow" class="row no-gutters">
-            <div id="leftInterface" class="col-3 onTop">
-              <div
-                id="boundaryInterface"
-                class="col-12 bgGlassBlue interfaceSizing"
-              >
+          <!--Extra Map Controls-->
+          <div class="row no-gutters">
+            <div id="mapStyle" class="col-4 fixedPosition onTop">
+              <select name="mapStyles" id="mapStyles">
+                <option id="streets-v11" value="streets-v11">Street</option>
+                <option id="light-v10" value="light-v10">Light Mode</option>
+                <option id="dark-v10" value="dark-v10">Dark Mode</option>
+                <option id="satellite-v9" value="satellite-v9"
+                  >Satellite</option
+                >
+                <option id="satellite-streets-v11" value="satellite-streets-v11"
+                  >Satellite Hybrid</option
+                >
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Interface Row-->
+      <div id="interfaceRow" class="row no-gutters fixedPosition fixedTop">
+            <div id="leftInterface" class="no-gutters onTop">
+              <div id="boundaryInterface" class="bgGlassBlue interfaceHeight interfaceWidth">
                 <div id="uploadBoundary" class="col">
                   <input
                     type="file"
@@ -190,15 +205,46 @@
                 </div>
               </div>
             </div>
-            <div id="leftInterfaceB" class="col-3 onTop">
-              <div
-                id="linesInterface"
-                class="col-12 interfaceSizing bgGlassGreen"
-              ></div>
+            <div id="leftInterfaceB" class="no-gutters onTop">
+              <div id="linesInterface" class="interfaceHeight interfaceWidth bgGlassGreen">
+                <div id="uploadLines" class="col">
+                  <input
+                    type="file"
+                    id="linesFile"
+                    name="linesFile"
+                    class="bgLightBlue fullWidth"
+                  />
+                  <div>
+                    <details>
+                      <summary class="centerAlign noOutline">
+                        Import a csv containing Latitude, Longitude fields.
+                        <p>Click for for further informaton</p>
+                      </summary>
+                      <ul>
+                        <li>The file must be comma separated (.csv)</li>
+                        <li>Row 1 must contain header text LAT and LONG</li>
+                        <li>Column 1 must be LAT</li>
+                        <li>Column 2 must be LONG</li>
+                        <li>Coordinates must be Geodetic WGS 1984</li>
+                        <li>Coordinate Format is (+/-)DD.DDDDDDD</li>
+                        <li>
+                          The first and last coordinates must be identical
+                        </li>
+                      </ul>
+                    </details>
+                  </div>
+                  <button
+                    id="linesSubmit"
+                    name="linesSubmit"
+                    class="centerAlign fullWidth bgDarkBlue lightText noBorder"
+                  >
+                    IMPORT
+                  </button>
+                </div>
+              </div>
             </div>
-            <div
-              id="leftInterfaceHeads"
-              class="interfaceSizing interfaceHeadWidth onTop"
+            <div id="leftInterfaceHeads"
+              class="col fullWidth no-gutters interfaceHeight onTop"
             >
               <div id="boundaryHead" class="col bgGlassBlue no-padding">
                 <h3>Boundary</h3>
@@ -207,24 +253,6 @@
                 <h3>Survey Lines</h3>
               </div>
             </div>
-          </div>
-          <!--Extra Map Controls-->
-          <div class="row no-gutters">
-            <div id="mapStyle" class="col-4 fixedPosition onTop">
-              <select name="mapStyles" id="mapStyles">
-                <option id="streets-v11" value="streets-v11">Street</option>
-                <option id="light-v10" value="light-v10">Light Mode</option>
-                <option id="dark-v10" value="dark-v10">Dark Mode</option>
-                <option id="satellite-v9" value="satellite-v9"
-                  >Satellite</option
-                >
-                <option id="satellite-streets-v11" value="satellite-streets-v11"
-                  >Satellite Hybrid</option
-                >
-              </select>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     <footer class="container-fluid bgDarkGrey lightText">
