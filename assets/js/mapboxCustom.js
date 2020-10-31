@@ -1,5 +1,5 @@
-$("document").ready(function () {   
-    mapboxgl.accessToken =
+$("document").ready(function () {
+  mapboxgl.accessToken =
     "pk.eyJ1Ijoia3dzbmljayIsImEiOiJja2UzMDY3eDAwZWZvMnlwZHk2bWJ3OXkxIn0.prNYik8MEfEYiueN0vP58Q";
 
   let map = new mapboxgl.Map({
@@ -48,13 +48,13 @@ $("document").ready(function () {
       displayControlsDefault: true,
     });
     document.getElementById("toolbar").appendChild(draw.onAdd(map));
-      
+
     //Draw imported Boundary Polygon
     window.importedCsvBoundaryToDraw = function (importedBoundary) {
-        draw.add(importedBoundary);
-        deleteExistingBoundary();
-        getPolygon();
-    }
+      draw.add(importedBoundary);
+      deleteExistingBoundary();
+      getPolygon();
+    };
 
     //Only allow 1x Polygon to exist
     map.on("draw.create", deleteExistingBoundary);
@@ -114,25 +114,28 @@ $("document").ready(function () {
 
       function writeBoundaryToTable() {
         $("#boundaryCoords>#boundaryTable>tbody>tr").remove();
-        for (let vertices of boundary) {
-          $("#boundaryCoords>#boundaryTable>tbody").append(
-            "<tr><td class='tableBorder'>" +
-              vertices[1].toFixed(7) +
-              "</td><td class='tableBorder'>" +
-              vertices[0].toFixed(7) +
-              "</td></tr>"
-          );
+        if (typeof boundary !== "undefined") {
+          for (let vertices of boundary) {
+            $("#boundaryCoords>#boundaryTable>tbody").append(
+              "<tr><td class='tableBorder'>" +
+                vertices[1].toFixed(7) +
+                "</td><td class='tableBorder'>" +
+                vertices[0].toFixed(7) +
+                "</td></tr>"
+            );
+          }
         }
       }
+
       writeBoundaryToTable();
-      
+
       //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.
       //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
       function simEnter() {
-        x = $.Event('keydown');
-        x.keyCode= 13; //Enter Key
-        $('input').trigger(x);
-      } 
+        x = $.Event("keydown");
+        x.keyCode = 13; //Enter Key
+        $("input").trigger(x);
+      }
       simEnter();
     }
   });
@@ -182,4 +185,3 @@ $("document").ready(function () {
   }
   reportLastTouchPos();
 });
-    
