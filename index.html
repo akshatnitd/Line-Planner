@@ -108,91 +108,93 @@
           <!--Interface Row-->
           <div id="interfaceRow" class="row no-gutters">
             <div id="leftInterface" class="col-3 onTop">
-                <div
-                  id="boundaryInterface"
-                  class="col-12 bgGlassBlue interfaceSizing"
-                >
-                  <div id="uploadBoundary" class="col">
-                    <input
-                      type="file"
-                      id="boundaryFile"
-                      name="boundaryFile"
-                      class="bgLightBlue fullWidth"
-                    />
-                    <div>
-                      <details>
-                        <summary class="centerAlign noOutline">
-                          Import a csv containing Latitude, Longitude fields.
-                          <p>Click for for further informaton</p>
-                        </summary>
-                        <ul>
-                          <li>The file must be comma separated (.csv)</li>
-                          <li>Row 1 must contain header text LAT and LONG</li>
-                          <li>Column 1 must be LAT</li>
-                          <li>Column 2 must be LONG</li>
-                          <li>Coordinates must be Geodetic WGS 1984</li>
-                          <li>Coordinate Format is (+/-)DD.DDDDDDD</li>
-                          <li>
-                            The first and last coordinates must be identical
-                          </li>
-                        </ul>
-                      </details>
-                    </div>
-                    <button
-                      id="boundarySubmit"
-                      name="boundarySubmit"
-                      class="centerAlign fullWidth bgDarkBlue lightText noBorder"
-                    >
-                      IMPORT
-                    </button>
+              <div
+                id="boundaryInterface"
+                class="col-12 bgGlassBlue interfaceSizing"
+              >
+                <div id="uploadBoundary" class="col">
+                  <input
+                    type="file"
+                    id="boundaryFile"
+                    name="boundaryFile"
+                    class="bgLightBlue fullWidth"
+                  />
+                  <div>
+                    <details>
+                      <summary class="centerAlign noOutline">
+                        Import a csv containing Latitude, Longitude fields.
+                        <p>Click for for further informaton</p>
+                      </summary>
+                      <ul>
+                        <li>The file must be comma separated (.csv)</li>
+                        <li>Row 1 must contain header text LAT and LONG</li>
+                        <li>Column 1 must be LAT</li>
+                        <li>Column 2 must be LONG</li>
+                        <li>Coordinates must be Geodetic WGS 1984</li>
+                        <li>Coordinate Format is (+/-)DD.DDDDDDD</li>
+                        <li>
+                          The first and last coordinates must be identical
+                        </li>
+                      </ul>
+                    </details>
                   </div>
-                  <div id="boundaryCoords" class="col centerAlign">
-                    <table
-                      id="boundaryTable"
-                      class="col-6 d-inline no-gutters no-padding fullWidth"
-                    >
-                      <thead class="lightText">
-                        <tr>
-                          <th class="tableBorder halfWidth">LAT</th>
-                          <th class="tableBorder halfWidth">LONG</th>
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
-                    <table
-                      id="boundaryConverted"
-                      class="col-6 d-inline no-gutters no-padding fullWidth"
-                    >
-                      <thead class="lightText">
-                        <tr>
-                          <th class="tableBorder halfWidth">NORTHING</th>
-                          <th class="tableBorder halfWidth">EASTING</th>
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
-                  </div>
-                  <div id="exportBoundary" class="col">
-                    <button
-                      id="boundaryExportGeo"
-                      name="boundaryExportGeo"
-                      class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop"
-                    >
-                      Export Geodetic Coords to CSV
-                    </button>
-                    <button
-                      id="boundaryExportProjected"
-                      name="boundaryExportProjected"
-                      class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop"
-                    >
-                      Export Projected Coords to CSV
-                    </button>
-                  </div>
+                  <button
+                    id="boundarySubmit"
+                    name="boundarySubmit"
+                    class="centerAlign fullWidth bgDarkBlue lightText noBorder"
+                  >
+                    IMPORT
+                  </button>
                 </div>
-                <div
-                  id="linesInterface"
-                  class="col-12 interfaceSizing bgGlassGreen "
-                ></div>
+                <div id="boundaryCoords" class="col centerAlign">
+                  <table
+                    id="boundaryTable"
+                    class="col-6 d-inline no-gutters no-padding fullWidth"
+                  >
+                    <thead class="lightText">
+                      <tr>
+                        <th class="tableBorder halfWidth">LAT</th>
+                        <th class="tableBorder halfWidth">LONG</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <table
+                    id="boundaryConverted"
+                    class="col-6 d-inline no-gutters no-padding fullWidth"
+                  >
+                    <thead class="lightText">
+                      <tr>
+                        <th class="tableBorder halfWidth">NORTHING</th>
+                        <th class="tableBorder halfWidth">EASTING</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+                <div id="exportBoundary" class="col">
+                  <button
+                    id="boundaryExportGeo"
+                    name="boundaryExportGeo"
+                    class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop"
+                  >
+                    Export Geodetic Coords to CSV
+                  </button>
+                  <button
+                    id="boundaryExportProjected"
+                    name="boundaryExportProjected"
+                    class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop"
+                  >
+                    Export Projected Coords to CSV
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="leftInterfaceB" class="col-3 onTop">
+              <div
+                id="linesInterface"
+                class="col-12 interfaceSizing bgGlassGreen"
+              ></div>
             </div>
             <div
               id="leftInterfaceHeads"
@@ -202,8 +204,8 @@
                 <h3>Boundary</h3>
               </div>
               <div id="linesHead" class="col bgGlassGreen no-padding">
-                    <h3>Survey Lines</h3>
-                  </div>
+                <h3>Survey Lines</h3>
+              </div>
             </div>
           </div>
           <!--Extra Map Controls-->
