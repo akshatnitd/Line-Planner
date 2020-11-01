@@ -53,4 +53,59 @@ $("document").ready(function () {
             importedCsvBoundaryToDraw (importedBoundaryGeoJSON);
         } 
     });
+    $("#linesSubmit").click(function(){
+        //Assigns the chosen file to "csvInput" variable.
+        function linesImport () {
+            let csvInput = $("#linesFile")[0].files[0];
+            //Invokes the "ReadFile" function, passing it the "csvInput" variable.
+            readFile(csvInput);
+        }
+        linesImport();
+        //Reads the contents of a file and outputs it as a text string.
+        function readFile(fileToRead) {
+            let reader = new FileReader();
+            reader.readAsText(fileToRead);
+            //When reader has successfully completed and passed the load event the result is written to the "readBoundaryResult" variable.
+            reader.onload = function(e) {
+                let readLinesResult = reader.result;
+                textToArray(readLinesResult);
+            }
+        }
+        //Function to turn text string into an array splitting by newline, and iterate through this array to build a new array which ignores the headers and parses the string items as floating numbers.
+        function textToArray (textToSplit) {
+            //Splits FileReader result by new line. 
+            let importedLinesArray = [];
+            let importedLinesSplit = textToSplit.split("\n");
+            importedLinesArray.push(importedLinesSplit);
+            //Splits Array created from initial newline split by comma, and iterates through each nested array to parse the string as a float, before writing this to a master array of coordinates. 
+           let linesArray = [];
+            let vertexLinesArray = [];
+            for (let i = 1; i < importedLinesArray[0].length; i++) {
+                let vertexArray = [];
+                let vertexCoords = [];
+                //Splits string array
+                let linesArraySplit = importedLinesArray[0][i].split(",");
+                for (let j = linesArraySplit.length -1; j >=0; j--) {
+                    //Parses each split array element as a floating number. 
+                    let vertexParam = parseFloat(linesArraySplit[j]);
+                    //Pushes lat and long for each coordinate back into thier own array.
+                    vertexCoords.push(vertexParam);
+                }
+                //Combined coordinates into a single array for the vertex. 
+                vertexLinesArray.push(vertexCoords);
+                console.log(vertexCoords);
+                //Pushes the combined coordinate as nested arrays within a master array for the boundary. 
+            }
+            linesArray.push(vertexLinesArray);
+            console.log(vertexLinesArray);
+            console.log(linesArray);
+            //boundaryArrayToGeoJSON(linesArray);
+        }
+        //Creates GeoJSON Object from vertexBoundaryArray.
+        /*function boundaryArrayToGeoJSON (polygonArray) {
+            importedBoundaryGeoJSON.geometry["coordinates"] = polygonArray;
+            importedBoundaryGeoJSON.geometry["type"] = "Polygon";
+            importedCsvBoundaryToDraw (importedBoundaryGeoJSON);
+        }*/
+    });
 });
