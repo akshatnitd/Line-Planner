@@ -97,6 +97,7 @@ $("document").ready(function () {
     //Function to find polygon in featureCollection
     function getPolygon(e) {
       $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
+      $("#boundaryStats>p").remove();
       let data = draw.getAll();
       let collectedFeatures = data.features;
       //For of loop to only target Polygon Features
@@ -104,7 +105,7 @@ $("document").ready(function () {
         for (let feature of collectedFeatures) {
           let area = turf.area(feature);
           let areaKm = (area/1000).toFixed(2);
-          $("#boundaryStats").html(`<strong><p>Boundary Area (km) : </strong>` + "" + areaKm + `</p>`);
+          $("#boundaryStats").html(`<p><strong>Boundary Area (km) : </strong>` + "" + areaKm + `</p>`);
           if (feature.geometry.type === "Polygon") {
             let polygonCoords = feature.geometry.coordinates[0];
             return polygonCoords;
