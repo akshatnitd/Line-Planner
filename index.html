@@ -1,114 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0 shrink-to-fit=no"
-    />
-    <meta name="author" content="Nicholas Bowley" />
-    <meta
-      name="description"
-      content="A tool for survey line planning and survey duration estimation."
-    />
-    <meta
-      name="keywords"
-      content="survey, line, plan, duration, CAD, GIS, lineplan, line-plan, planning, hydrographic, aerial"
-    />
-    <title>Line Planner</title>
-    <!--Bootstrap 4.5.2-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <!--JQuery 3.5.1 CDN-->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <!--Mapbox GL 1.12.0-->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.css"
-      type="text/css"
-    />
-    <!--CSS Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="assets/css/mapboxOverride.css"
-    />
 
-    <!--Font Awesome 5.14-->
-    <script
-      src="https://kit.fontawesome.com/edea6a1559.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--Custom Scripts-->
-    <script type="text/javascript" src="assets/js/mapboxCustom.js"></script>
-    <script type="module" src="assets/js/UTMproject.js"></script>
-    <script
-      type="text/javascript"
-      src="assets/js/interfaceCollapse.js"
-    ></script>
-    <script type="text/javascript" src="assets/js/fileUploads.js"></script>
-    <script type="text/javascript" src="assets/js/importCSV.js"></script>
-    <script type="text/javascript" src="assets/js/exportCSV.js"></script>
-    <!--Jasmine Testing-->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.js"
-      integrity="sha512-dqL4nYnbiMiNNy/V2zRK55QXSRVyu26KCuGoL8Zf5lDfKRRf8pBFW8RXe8at36QlB8s8bnOjKP6b5YTalHO6wQ=="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine-html.js"
-      integrity="sha512-bqig44hBpNuvBzxsqbHiqwRximGm4UfJAvOeNQHjB7++0D2u/3bcw4ZwmVsqrooii2UJ91oDI/6aANdp3BwcQQ=="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/boot.js"
-      integrity="sha512-igPP1Xd0hsvXVZGyfIYeUD779NLEA1Sj/5ts2C/e/22zeUqR6ehA7M/nNLuONalznkHQkGPBESNwzGpwBQD60g=="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.css"
-      integrity="sha512-XKXP02aeSNI5HsDB3+4MM0tSDXJTBFZpt99xL7PvMz3+A3aRy0F0Ne/CATK+Z72ckE/4Ev9OiosWQr5LtU284Q=="
-      crossorigin="anonymous"
-    />
-    <!--Jasmine Test Scripts-->
-    <script type="text/javascript" src="assets/js/spec/latLongSpec.js"></script>
-  </head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+	<meta name="author" content="Nicholas Bowley" />
+	<meta name="description" content="A tool for survey line planning and survey duration estimation." />
+	<meta name="keywords"
+		content="survey, line, plan, duration, CAD, GIS, lineplan, line-plan, planning, hydrographic, aerial" />
+	<title>Line Planner</title>
+	<!--Bootstrap 4.5.2-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+	<!--JQuery 3.5.1 CDN-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<!--Mapbox GL 1.12.0-->
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+	<script src="https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.js"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.css"
+		type="text/css" />
+	<!--CSS Stylesheet-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/mapboxOverride.css" />
 
-  <body>
-    <section id="workspace" class="container-fluid no-padding">
-      <div id="mapSpace" class="row no-gutters">
-        <div id="map" class="col">
-          <!--Header bar with logo and toolbar-->
-          <header class="row no-gutters fullWidth">
-            <div id="logo" class="col-2">
-              <img
+	<!--Font Awesome 5.14-->
+	<script src="https://kit.fontawesome.com/edea6a1559.js" crossorigin="anonymous"></script>
+	<!--Custom Scripts-->
+	<script type="text/javascript" src="assets/js/mapboxCustom.js"></script>
+	<script type="module" src="assets/js/UTMproject.js"></script>
+	<script type="text/javascript" src="assets/js/interfaceCollapse.js"></script>
+	<script type="text/javascript" src="assets/js/fileUploads.js"></script>
+	<script type="text/javascript" src="assets/js/importCSV.js"></script>
+	<script type="text/javascript" src="assets/js/exportCSV.js"></script>
+	<!--Jasmine Testing-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.js"
+		integrity="sha512-dqL4nYnbiMiNNy/V2zRK55QXSRVyu26KCuGoL8Zf5lDfKRRf8pBFW8RXe8at36QlB8s8bnOjKP6b5YTalHO6wQ=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine-html.js"
+		integrity="sha512-bqig44hBpNuvBzxsqbHiqwRximGm4UfJAvOeNQHjB7++0D2u/3bcw4ZwmVsqrooii2UJ91oDI/6aANdp3BwcQQ=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/boot.js"
+		integrity="sha512-igPP1Xd0hsvXVZGyfIYeUD779NLEA1Sj/5ts2C/e/22zeUqR6ehA7M/nNLuONalznkHQkGPBESNwzGpwBQD60g=="
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.css"
+		integrity="sha512-XKXP02aeSNI5HsDB3+4MM0tSDXJTBFZpt99xL7PvMz3+A3aRy0F0Ne/CATK+Z72ckE/4Ev9OiosWQr5LtU284Q=="
+		crossorigin="anonymous" />
+	<!--Jasmine Test Scripts-->
+	<script type="text/javascript" src="assets/js/spec/latLongSpec.js"></script>
+</head>
+
+<body>
+	<section id="workspace" class="container-fluid no-padding">
+		<div id="mapSpace" class="row no-gutters">
+			<div id="map" class="col">
+				<!--Header bar with logo and toolbar-->
+				<header class="row no-gutters fullWidth">
+					<div id="logo" class="col-2">
+						<img
                 src="assets/images/linePlannerLogoRev00.png"
                 alt="Line Planner logo"
               />
             </div>
-            <div id="toolbar" class="col-6 offset-4 bgGlassSmoke"></div>
-          </header>
-          <!--Extra Map Controls-->
-          <div class="row no-gutters">
-            <div id="mapStyle" class="col-4 fixedPosition onTop">
-              <select name="mapStyles" id="mapStyles">
+						<div id="toolbar" class="col-6 offset-4 bgGlassSmoke"></div>
+				</header>
+				<!--Extra Map Controls-->
+				<div class="row no-gutters">
+					<div id="mapStyle" class="col-4 fixedPosition onTop">
+						<select name="mapStyles" id="mapStyles">
                 <option id="streets-v11" value="streets-v11">Street</option>
                 <option id="light-v10" value="light-v10">Light Mode</option>
                 <option id="dark-v10" value="dark-v10">Dark Mode</option>
@@ -119,218 +80,214 @@
                   >Satellite Hybrid</option
                 >
               </select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Interface Row-->
-      <div id="interfaceRow" class="row no-gutters fixedPosition fixedTop">
-            <div id="leftInterface" class="no-gutters onTop">
-              <div id="boundaryInterface" class="bgGlassBlue interfaceHeight interfaceWidth">
-                <div id="uploadBoundary" class="col">
-                  <input
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Interface Row-->
+		<div id="interfaceRow" class="row no-gutters fixedPosition fixedTop">
+			<div id="leftInterface" class="no-gutters onTop">
+				<div id="boundaryInterface" class="bgGlassBlue interfaceHeight interfaceWidth">
+					<div id="uploadBoundary" class="col">
+						<input
                     type="file"
                     id="boundaryFile"
                     name="boundaryFile"
                     class="bgLightBlue fullWidth"
                   />
-                  <div>
-                    <details>
-                      <summary class="centerAlign noOutline">
-                        Import a csv containing Latitude, Longitude fields.
-                        <p>Click for for further informaton</p>
-                      </summary>
-                      <ul>
-                        <li>The file must be comma separated (.csv)</li>
-                        <li>Row 1 must contain header text LAT and LONG</li>
-                        <li>Column 1 must be LAT</li>
-                        <li>Column 2 must be LONG</li>
-                        <li>Coordinates must be Geodetic WGS 1984</li>
-                        <li>Coordinate Format is (+/-)DD.DDDDDDD</li>
-                        <li>
-                          The first and last coordinates must be identical
-                        </li>
-                      </ul>
-                    </details>
-                  </div>
-                  <button
+						<div>
+							<details>
+								<summary class="centerAlign noOutline">
+									Import a csv containing Latitude, Longitude fields.
+									<p>Click for for further informaton</p>
+								</summary>
+								<ul>
+									<li>The file must be comma separated (.csv)</li>
+									<li>Row 1 must contain header text LAT and LONG</li>
+									<li>Column 1 must be LAT</li>
+									<li>Column 2 must be LONG</li>
+									<li>Coordinates must be Geodetic WGS 1984</li>
+									<li>Coordinate Format is (+/-)DD.DDDDDDD</li>
+									<li>
+										The first and last coordinates must be identical
+									</li>
+								</ul>
+							</details>
+						</div>
+						<button
                     id="boundarySubmit"
                     name="boundarySubmit"
                     class="centerAlign fullWidth bgDarkBlue lightText noBorder"
                   >
                     IMPORT
                   </button>
-                </div>
-                <div id="boundaryCoords" class="col centerAlign">
-                  <table
-                    id="boundaryTable"
-                    class="col-6 d-inline no-gutters no-padding fullWidth"
-                  >
-                    <thead class="lightText">
-                      <tr>
-                        <th class="tableBorder halfWidth">LAT</th>
-                        <th class="tableBorder halfWidth">LONG</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                  <table
-                    id="boundaryConverted"
-                    class="col-6 d-inline no-gutters no-padding fullWidth"
-                  >
-                    <thead class="lightText">
-                      <tr>
-                        <th class="tableBorder halfWidth">NORTHING</th>
-                        <th class="tableBorder halfWidth">EASTING</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
-                <div id="exportBoundary" class="col">
-                  <button
+					</div>
+					<div id="boundaryCoords" class="col centerAlign">
+						<table id="boundaryTable" class="col-6 d-inline no-gutters no-padding fullWidth">
+							<thead class="lightText">
+								<tr>
+									<th class="tableBorder halfWidth">LAT</th>
+									<th class="tableBorder halfWidth">LONG</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+						<table id="boundaryConverted" class="col-6 d-inline no-gutters no-padding fullWidth">
+							<thead class="lightText">
+								<tr>
+									<th class="tableBorder halfWidth">NORTHING</th>
+									<th class="tableBorder halfWidth">EASTING</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div id="exportBoundary" class="col">
+						<button
                     id="boundaryExportGeo"
                     name="boundaryExportGeo"
                     class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop"
                   >
                     Export Geodetic Coords to CSV
                   </button>
-                  <button
+						<button
                     id="boundaryExportProjected"
                     name="boundaryExportProjected"
                     class="centerAlign fullWidth bgDarkBlue lightText noBorder marginTop"
                   >
                     Export Projected Coords to CSV
                   </button>
-                </div>
-              </div>
-            </div>
-            <div id="leftInterfaceB" class="no-gutters onTop">
-              <div id="linesInterface" class="interfaceHeight interfaceWidth bgGlassGreen">
-                <div id="uploadLines" class="col">
-                  <input
+					</div>
+				</div>
+			</div>
+			<div id="leftInterfaceB" class="no-gutters onTop">
+				<div id="linesInterface" class="interfaceHeight interfaceWidth bgGlassGreen">
+					<div id="uploadLines" class="col">
+						<input
                     type="file"
                     id="linesFile"
                     name="linesFile"
                     class="bgLightGreen fullWidth"
                   />
-                  <div>
-                    <details>
-                      <summary class="centerAlign noOutline">
-                        Import a csv containing Latitude, Longitude fields.
-                        <p>Click for for further informaton</p>
-                      </summary>
-                      <ul>
-                        <li>The file must be comma separated (.csv)</li>
-                        <li>Row 1 must contain header text LAT and LONG</li>
-                        <li>Column 1 must be LAT</li>
-                        <li>Column 2 must be LONG</li>
-                        <li>Coordinates must be Geodetic WGS 1984</li>
-                        <li>Coordinate Format is (+/-)DD.DDDDDDD</li>
-                        <li>
-                          The first and last coordinates must be identical
-                        </li>
-                      </ul>
-                    </details>
-                  </div>
-                  <button
+						<div>
+							<details>
+								<summary class="centerAlign noOutline">
+									Import a csv containing Latitude, Longitude fields.
+									<p>Click for for further informaton</p>
+								</summary>
+								<ul>
+									<li>The file must be comma separated (.csv)</li>
+									<li>Row 1 must contain header text LAT and LONG</li>
+									<li>Column 1 must be LAT</li>
+									<li>Column 2 must be LONG</li>
+									<li>Coordinates must be Geodetic WGS 1984</li>
+									<li>Coordinate Format is (+/-)DD.DDDDDDD</li>
+									<li>
+										The first and last coordinates must be identical
+									</li>
+								</ul>
+							</details>
+						</div>
+						<button
                     id="linesSubmit"
                     name="linesSubmit"
                     class="centerAlign fullWidth bgDarkGreen lightText noBorder"
                   >
                     IMPORT
                   </button>
-                </div>
-                <div id="lineCoords" class="col centerAlign">
-                  <table
-                    id="lineTable"
-                    class="col-6 d-inline no-gutters no-padding fullWidth"
-                  >
-                    <thead class="lightText">
-                      <tr>
-                        <th class="tableBorder">Line ID</th>
-                        <th class="tableBorder">LAT</th>
-                        <th class="tableBorder">LONG</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                  <table
-                    id="lineConverted"
-                    class="col-6 d-inline no-gutters no-padding fullWidth"
-                  >
-                    <thead class="lightText">
-                      <tr>
-                        <th class="tableBorder">Line ID</th>
-                        <th class="tableBorder">NORTHING</th>
-                        <th class="tableBorder">EASTING</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
-                <div id="exportlines" class="col">
-                  <button
+					</div>
+					<div id="lineCoords" class="col centerAlign">
+						<table id="lineTable" class="col-6 d-inline no-gutters no-padding fullWidth">
+							<thead class="lightText">
+								<tr>
+									<th class="tableBorder">Line ID</th>
+									<th class="tableBorder">LAT</th>
+									<th class="tableBorder">LONG</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+						<table id="lineConverted" class="col-6 d-inline no-gutters no-padding fullWidth">
+							<thead class="lightText">
+								<tr>
+									<th class="tableBorder">Line ID</th>
+									<th class="tableBorder">NORTHING</th>
+									<th class="tableBorder">EASTING</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div id="exportlines" class="col">
+						<button
                     id="lineExportGeo"
                     name="lineExportGeo"
                     class="centerAlign fullWidth bgDarkGreen lightText noBorder marginTop"
                   >
                     Export Geodetic Coords to CSV
                   </button>
-                  <button
+						<button
                     id="lineExportProjected"
                     name="lineExportProjected"
                     class="centerAlign fullWidth bgDarkGreen lightText noBorder marginTop"
                   >
                     Export Projected Coords to CSV
                   </button>
-                </div>
-              </div>
-            </div>
-            <div id="leftInterfaceHeads"
-              class="col fullWidth no-gutters interfaceHeight onTop"
-            >
-              <div id="boundaryHead" class="col bgGlassBlue no-padding">
-                <h3>Boundary</h3>
-              </div>
-              <div id="linesHead" class="col bgGlassGreen no-padding">
-                <h3>Survey Lines</h3>
-              </div>
-            </div>
-      </div>
-    </section>
-    <footer class="container-fluid bgDarkGrey lightText">
-      <div class="row no-gutters">
-        <div id="copyright" class="col-3">
-          <p class="no-margin">Copyright Placeholder</p>
-        </div>
-        <div id="position" class="col-6 centerAlign">
-          <div class="row no-gutters">
-            <div id="cursorLat" class="col-12 col-lg-4"></div>
-            <div id="cursorLong" class="col-12 col-lg-4"></div>
-            <div id="cursorGeodetic" class="col-12 col-lg-4"></div>
-          </div>
-          <div class="row no-gutters">
-            <div id="cursorNorthing" class="col-12 col-lg-4"></div>
-            <div id="cursorEasting" class="col-12 col-lg-4"></div>
-            <div id="cursorUtmZone" class="col-12 col-lg-4"></div>
-          </div>
-        </div>
-        <div id="version" class="col-3 rightAlign">
-          <p class="no-margin">Version Placeholder</p>
-        </div>
-      </div>
-    </footer>
-    <!--Bootstrap 4.5.2 JS-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+					</div>
+				</div>
+			</div>
+			<div id="leftInterfaceHeads" class="col fullWidth no-gutters interfaceHeight onTop">
+				<div id="boundaryHead" class="col bgGlassBlue no-padding">
+					<h3>Boundary</h3>
+				</div>
+				<div id="linesHead" class="col bgGlassGreen no-padding">
+					<h3>Survey Lines</h3>
+				</div>
+			</div>
+			<div id="rightInterfaceHeads" class="col fullWidth no-gutters interfaceHeight onTop">
+				<div id="statsHead" class="col bgGlassSmoke no-padding">
+					<h3>Statistics</h3>
+				</div>
+			</div>
+			<div id="rightInterface" class="no-gutters onTop">
+				<div id="statsInterface" class="bgGlassSmoke interfaceHeight interfaceWidth">
+					<div id="boundaryStats" class="col">
+						<div class="col-12 d-inline"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<footer class="container-fluid bgDarkGrey lightText">
+		<div class="row no-gutters">
+			<div id="copyright" class="col-3">
+				<p class="no-margin">Copyright Placeholder</p>
+			</div>
+			<div id="position" class="col-6 centerAlign">
+				<div class="row no-gutters">
+					<div id="cursorLat" class="col-12 col-lg-4"></div>
+					<div id="cursorLong" class="col-12 col-lg-4"></div>
+					<div id="cursorGeodetic" class="col-12 col-lg-4"></div>
+				</div>
+				<div class="row no-gutters">
+					<div id="cursorNorthing" class="col-12 col-lg-4"></div>
+					<div id="cursorEasting" class="col-12 col-lg-4"></div>
+					<div id="cursorUtmZone" class="col-12 col-lg-4"></div>
+				</div>
+			</div>
+			<div id="version" class="col-3 rightAlign">
+				<p class="no-margin">Version Placeholder</p>
+			</div>
+		</div>
+	</footer>
+	<!--Bootstrap 4.5.2 JS-->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+	</script>
+</body>
+
 </html>

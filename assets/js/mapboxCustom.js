@@ -102,6 +102,9 @@ $("document").ready(function () {
       //For of loop to only target Polygon Features
       function polygonTarget() {
         for (let feature of collectedFeatures) {
+          let area = turf.area(feature);
+          let areaKm = (area/1000).toFixed(2);
+          $("#boundaryStats").html(`<strong><p>Boundary Area (km) : </strong>` + "" + areaKm + `</p>`);
           if (feature.geometry.type === "Polygon") {
             let polygonCoords = feature.geometry.coordinates[0];
             return polygonCoords;

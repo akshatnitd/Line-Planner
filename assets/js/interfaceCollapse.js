@@ -8,6 +8,6 @@ $("document").ready(function(){
          $("#leftInterfaceB").toggle();
     });
     $("#statsHead").click(function(){
-         $("#statsInterface").toggle();
+         $("#rightInterface").toggle();
     });
 })
