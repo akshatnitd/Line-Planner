@@ -97,7 +97,7 @@ $("document").ready(function () {
     //Function to find polygon in featureCollection
     function getPolygon(e) {
       $("#boundaryCoords>#boundaryConverted>tbody>tr").remove();
-      $("#boundaryStats>p").remove();
+      $("#boundaryStatData>p").remove();
       let data = draw.getAll();
       let collectedFeatures = data.features;
       //For of loop to only target Polygon Features
@@ -106,7 +106,7 @@ $("document").ready(function () {
           let area = turf.area(feature);
           let areaKm = (area/1000).toFixed(2);
           let perimeterLength = (turf.length(feature)).toFixed(2);
-          $("#boundaryStats").html(`<h4>Boundary Statistics</h4><p><strong>Boundary Area (km) : </strong>` + "" + areaKm + `</p><p><strong>Boundary Perimeter Length (km) : </strong>` + "" + perimeterLength + `</p>`);
+          $("#boundaryStatData").html(`<p id="boundaryArea"><strong>Boundary Area (km) : </strong>` + "" + areaKm + `</p><p id="boundaryPerimeter"><strong>Boundary Perimeter Length (km) : </strong>` + "" + perimeterLength + `</p>`);
           if (feature.geometry.type === "Polygon") {
             let polygonCoords = feature.geometry.coordinates[0];
             return polygonCoords;
@@ -165,7 +165,6 @@ $("document").ready(function () {
       lineTarget();
       //Line Variable containing the coordinate array of the lineString
       let lines = lineTarget();
-    
       function writeLineToTable() {
         $("#lineCoords>#lineTable>tbody>tr").remove();
         if (typeof lines !== "undefined") {
@@ -190,9 +189,9 @@ $("document").ready(function () {
             let uniqueLineLengthSet = new Set(lineLengthArray);
             let uniqueLineLengthArray = [...uniqueLineLengthSet];
             lineLengthsArray.push(uniqueLineLengthArray);
-            $("#lineStats>tbody>tr").remove();
+            $("#lineStatsTable>tbody>tr").remove();
             for (let k = 0; k <lineLengthsArray.length; k++) {
-                $("#lineStats>tbody").append(
+                $("#lineStatsTable>tbody").append(
                 "<tr><td class='tableBorder'>" +
                   lineLengthsArray[k][0] + "<td class='tableBorder'>" +
                   lineLengthsArray[k][1] +"</td></tr>"

@@ -250,18 +250,23 @@
 				</div>
 			</div>
 			<div id="rightInterface" class="no-gutters onTop">
-				<div id="statsInterface" class="bgGlassSmoke interfaceHeight interfaceWidth">
+				<div id="statsInterface" class="bgGlassSmoke interfaceHeight interfaceWidth centerAlign">
 					<div id="boundaryStats" class="col">
-						<div class="col-12 d-inline"></div>
+						<h4>Boundary Statistics</h4>
+                        <div id="boundaryStatData" class="col"></div>
 					</div>
-                    <table id="lineStats" class="col">
-                        <thead>
-                            <th>Line ID</th>
-                            <th>Line Length</th>
-                        </thead>
-                        <tbody>
-                        </tbody>                    
-                    </table>
+					<div id="lineStats" class="col">
+						<h4>Line Statistics</h4>
+						<table id="lineStatsTable">
+							<thead>
+								<th>Line ID</th>
+								<th>Line Length (km)</th>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+
 				</div>
 			</div>
 		</div>
