@@ -105,7 +105,8 @@ $("document").ready(function () {
         for (let feature of collectedFeatures) {
           let area = turf.area(feature);
           let areaKm = (area/1000).toFixed(2);
-          $("#boundaryStats").html(`<p><strong>Boundary Area (km) : </strong>` + "" + areaKm + `</p>`);
+          let perimeterLength = (turf.length(feature)).toFixed(2);
+          $("#boundaryStats").html(`<h4>Boundary Statistics</h4><p><strong>Boundary Area (km) : </strong>` + "" + areaKm + `</p><p><strong>Boundary Perimeter Length (km) : </strong>` + "" + perimeterLength + `</p>`);
           if (feature.geometry.type === "Polygon") {
             let polygonCoords = feature.geometry.coordinates[0];
             return polygonCoords;
@@ -115,7 +116,6 @@ $("document").ready(function () {
       polygonTarget();
       //Boundary Variable containing the coordinate array of the polygon
       let boundary = polygonTarget();
-
       function writeBoundaryToTable() {
         $("#boundaryCoords>#boundaryTable>tbody>tr").remove();
         if (typeof boundary !== "undefined") {
