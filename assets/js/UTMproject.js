@@ -102,7 +102,6 @@ $(document).ready(function () {
             lineTableArray.push(arrayOfThisVertices);
           }
         });
-        console.log(lineTableArray);
         return lineTableArray;
       }
       lineTableToArray();

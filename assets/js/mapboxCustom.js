@@ -163,13 +163,16 @@ $("document").ready(function () {
         return lineFeaturesArray;
       }
       lineTarget();
-      //Boundary Variable containing the coordinate array of the polygon
+      //Line Variable containing the coordinate array of the lineString
       let lines = lineTarget();
-
+    
       function writeLineToTable() {
         $("#lineCoords>#lineTable>tbody>tr").remove();
         if (typeof lines !== "undefined") {
+            let lineLengthsArray = [];
           for (let i = 0; i < lines.length; i++) {
+            let lineLengthArray = [];
+            let lineLength = (turf.length(turf.lineString(lines[i]))).toFixed(2);
             let lineId = i + 1;
             let line = lines[i];
             let lineCoords = [];
@@ -181,6 +184,18 @@ $("document").ready(function () {
                   lineId + "<td class='tableBorder'>" +
                   lineCoords[j][0] + "</td><td class='tableBorder'>" + lineCoords[j][1] +
                   "</td></tr>"
+            );
+            }
+            lineLengthArray.push(lineId, lineLength);
+            let uniqueLineLengthSet = new Set(lineLengthArray);
+            let uniqueLineLengthArray = [...uniqueLineLengthSet];
+            lineLengthsArray.push(uniqueLineLengthArray);
+            $("#lineStats>tbody>tr").remove();
+            for (let k = 0; k <lineLengthsArray.length; k++) {
+                $("#lineStats>tbody").append(
+                "<tr><td class='tableBorder'>" +
+                  lineLengthsArray[k][0] + "<td class='tableBorder'>" +
+                  lineLengthsArray[k][1] +"</td></tr>"
             );
             }
           }        
