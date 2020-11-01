@@ -111,7 +111,6 @@ $("document").ready(function () {
       polygonTarget();
       //Boundary Variable containing the coordinate array of the polygon
       let boundary = polygonTarget();
-      console.log(boundary);
 
       function writeBoundaryToTable() {
         $("#boundaryCoords>#boundaryTable>tbody>tr").remove();
@@ -162,7 +161,6 @@ $("document").ready(function () {
       lineTarget();
       //Boundary Variable containing the coordinate array of the polygon
       let lines = lineTarget();
-      console.log(lines);
 
       function writeLineToTable() {
         $("#lineCoords>#lineTable>tbody>tr").remove();
@@ -170,9 +168,7 @@ $("document").ready(function () {
           for (let i = 0; i < lines.length; i++) {
             let lineId = i + 1;
             let line = lines[i];
-            console.log(line);
             let lineCoords = [];
-            console.log(lineCoords);
             for (let j = 0; j < line.length; j++) {
               let lineVertex = [line[j][1].toFixed(7), line[j][0].toFixed(7)];
               lineCoords.push(lineVertex);
@@ -183,7 +179,6 @@ $("document").ready(function () {
                   "</td></tr>"
             );
             }
-            
           }        
         }
       }
@@ -192,12 +187,12 @@ $("document").ready(function () {
 
       //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.
       //Adapted from cloakedninjas response within a Stack Overflow query June 2013.
-      function simEnter() {
+      function simShift() {
         x = $.Event("keydown");
-        x.keyCode = 13; //Enter Key
+        x.keyCode = 16; //Shift Key
         $("input").trigger(x);
       }
-      simEnter();
+      simShift();
     }
   });
 
