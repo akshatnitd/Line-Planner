@@ -167,43 +167,24 @@ $("document").ready(function () {
       function writeLineToTable() {
         $("#lineCoords>#lineTable>tbody>tr").remove();
         if (typeof lines !== "undefined") {
-            let lineCoordinates = [];
-            let lineId = [];
           for (let i = 0; i < lines.length; i++) {
-            let lineNo = [i + 1];
+            let lineId = i + 1;
             let line = lines[i];
-            /*$("#lineCoords>#lineTable>tbody").append(
-                "<tr><td class='tableBorder'>" +
-                  lineId +
-                  "</td></tr>"
-            );*/
             console.log(line);
             let lineCoords = [];
             console.log(lineCoords);
             for (let j = 0; j < line.length; j++) {
               let lineVertex = [line[j][1].toFixed(7), line[j][0].toFixed(7)];
               lineCoords.push(lineVertex);
-            }
-            lineId.push(lineNo);
-            lineCoordinates.push(lineCoords);
-          }
-          for (let l = 0; l < lineCoordinates.length; l++) {
-            console.log(lineCoordinates);    
-            $("#lineCoords>#lineTable>tbody").append(
+              $("#lineCoords>#lineTable>tbody").append(
                 "<tr><td class='tableBorder'>" +
-                  lineId +
+                  lineId + "<td class='tableBorder'>" +
+                  lineCoords[j][0] + "</td><td class='tableBorder'>" + lineCoords[j][1] +
                   "</td></tr>"
             );
-                for (let k = 0; k < lineCoordinates[l].length; k++) {
-                $("#lineCoords>#lineTable>tbody>tr").append(
-                    "<td class='tableBorder'>" +
-                  lineCoordinates[l][k][1] +
-                  "</td><td class='tableBorder'>" +
-                  lineCoordinates[l][k][0] +
-                  "</td>"
-              );
             }
-          } 
+            
+          }        
         }
       }
 
