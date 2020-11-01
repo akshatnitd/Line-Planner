@@ -182,7 +182,6 @@ $("document").ready(function () {
           }        
         }
       }
-
       writeLineToTable();
 
       //Function to simulate an enter key down event, used to trigger the functions in UTMproject.js to convert the LAT LONG boundary to Easting and Northing.

@@ -110,6 +110,7 @@ $(document).ready(function () {
       function convertBoundaryTableArrayToUtm() {
         let projectedArray = [];
         for (let geodeticCoords of lineTableToArray()) {
+          let lineProjectedId = geodeticCoords[0];
           let lineTableLatLong = new LatLon(
             geodeticCoords[1],
             geodeticCoords[2]
@@ -118,7 +119,7 @@ $(document).ready(function () {
           let lineNorthing = lineTableUTM["northing"];
           let lineEasting = lineTableUTM["easting"];
           let arrayOfThisProjected = [];
-          arrayOfThisProjected.push(lineNorthing, lineEasting);
+          arrayOfThisProjected.push(lineProjectedId, lineNorthing, lineEasting);
           projectedArray.push(arrayOfThisProjected);
         }
         function writeBoundUtmToTable() {
@@ -126,9 +127,11 @@ $(document).ready(function () {
           for (let projectedVertices of projectedArray) {
             $("#lineCoords>#lineConverted>tbody").append(
               "<tr><td class='tableBorder'>" +
-                projectedVertices[0].toFixed(2) +
+                projectedVertices[0] +
                 "</td><td class='tableBorder'>" +
                 projectedVertices[1].toFixed(2) +
+                "</td><td class='tableBorder'>" +
+                projectedVertices[2].toFixed(2) +
                 "</td></tr>"
             );
           }
