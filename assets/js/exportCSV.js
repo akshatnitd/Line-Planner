@@ -54,4 +54,31 @@ $("document").ready(function () {
         downloadLink.click();
     }
   });
+  $("#lineExportGeo").click(function () {
+    function exportLineGeoToCSV() {
+      let csv = [];
+      let rows = document.querySelectorAll("#lineTable tr");
+
+      for (let i = 0; i < rows.length; i++) {
+        let row = [],
+          cols = rows[i].querySelectorAll("td, th");
+        for (let j = 0; j < cols.length; j++) row.push(cols[j].innerText);
+
+        csv.push(row.join(","));
+      }
+      downloadLineGeoCSV(csv.join("\n"));
+    }
+    exportLineGeoToCSV();
+    function downloadLineGeoCSV(csv) {
+        let csvFile;
+        let downloadLink;
+        csvFile = new Blob([csv], {type: "text.csv"});
+        downloadLink = document.createElement("a");
+        downloadLink.download = "lineExportGeodetic.csv";
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+    }
+  });
 });
