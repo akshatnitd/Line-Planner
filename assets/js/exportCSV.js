@@ -101,7 +101,7 @@ $("document").ready(function () {
         let downloadLink;
         csvFile = new Blob([csv], {type: "text.csv"});
         downloadLink = document.createElement("a");
-        downloadLink.download = "boundaryLineProjected.csv";
+        downloadLink.download = "lineExportProjected.csv";
         downloadLink.href = window.URL.createObjectURL(csvFile);
         downloadLink.style.display = "none";
         document.body.appendChild(downloadLink);
