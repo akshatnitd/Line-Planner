@@ -172,6 +172,7 @@ $("document").ready(function () {
         $("#lineStatsTable>tbody>tr").remove();
         $("#lineCount").html(" ");
         $("#lineDistance").html(" ");
+        $("#recalcWarning").show();
         if (typeof lines !== "undefined") {
             let lineLengthsArray = [];
           for (let i = 0; i < lines.length; i++) {
