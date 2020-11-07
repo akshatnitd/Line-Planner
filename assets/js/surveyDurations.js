@@ -1,4 +1,5 @@
 $("document").ready(function(){
+    $("#recalcWarning").hide();
     $("#calcDurations").click(function(){
         //Obtains the speed entered by the user in the "Survey Speed (m/s)" Input.
         let speed = parseFloat(document.getElementById("surveySpeed").value);
