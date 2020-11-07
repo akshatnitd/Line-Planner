@@ -165,6 +165,7 @@ $("document").ready(function () {
       lineTarget();
       //Line Variable containing the coordinate array of the lineString
       let lines = lineTarget();
+      //Gets line string coorinates, matches then to a line ID and writes them to a table for the user.
       function writeLineToTable() {
         $("#lineCoords>#lineTable>tbody>tr").remove();
         if (typeof lines !== "undefined") {
@@ -191,16 +192,26 @@ $("document").ready(function () {
             let uniqueLineLengthArray = [...uniqueLineLengthSet];
             lineLengthsArray.push(uniqueLineLengthArray);
             console.log(lineLengthsArray);
+            let lengthsToFloatArray = [];
             $("#lineStatsTable>tbody>tr").remove();
             for (let k = 0; k <lineLengthsArray.length; k++) {
+                //Writes the line ID and Length into a table for the user in Statistics
                 $("#lineStatsTable>tbody").append(
                 "<tr><td class='tableBorder'>" +
                   lineLengthsArray[k][0] + "<td class='tableBorder'>" +
                   lineLengthsArray[k][1] +"</td></tr>"
                 );
+                //Counts the number of lines and reports it into a HTML element for the user in Statistics
                 let noLines = k+1;
                 $("#lineCount").html(" " + noLines);
+                //Takes the length of each line, converts from a string to a floating number and pushes into an array.
+                lengthsToFloatArray.push(parseFloat(lineLengthsArray[k][1]));
             }
+            //Sums all the line lengths in the floating number array
+            let totalLineLength = lengthsToFloatArray.reduce(function(a, b){
+                return a + b;
+            }, 0);
+            $("#lineDistance").html(" " + totalLineLength.toFixed(2));
           }        
         }
       }
