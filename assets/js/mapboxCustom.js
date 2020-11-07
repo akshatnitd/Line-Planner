@@ -166,8 +166,10 @@ $("document").ready(function () {
       //Line Variable containing the coordinate array of the lineString
       let lines = lineTarget();
       //Gets line string coorinates, matches then to a line ID and writes them to a table for the user.
+      
       function writeLineToTable() {
         $("#lineCoords>#lineTable>tbody>tr").remove();
+        $("#lineStatsTable>tbody>tr").remove();
         if (typeof lines !== "undefined") {
             let lineLengthsArray = [];
           for (let i = 0; i < lines.length; i++) {
