@@ -207,7 +207,7 @@ $("document").ready(function () {
                 //Takes the length of each line, converts from a string to a floating number and pushes into an array.
                 lengthsToFloatArray.push(parseFloat(lineLengthsArray[k][1]));
             }
-            //Sums all the line lengths in the floating number array
+            //Sums all the line lengths in the floating number array and writes a value to 2d.p into an HTML element in Statistics.
             let totalLineLength = lengthsToFloatArray.reduce(function(a, b){
                 return a + b;
             }, 0);
