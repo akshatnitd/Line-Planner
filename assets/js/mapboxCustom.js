@@ -105,7 +105,6 @@ $("document").ready(function () {
         for (let feature of collectedFeatures) {
           let area = turf.area(feature);
           let areaKm = (area/1000).toFixed(2);
-          //let perimeterLength = (turf.length(feature)).toFixed(2);
           if (feature.geometry.type === "Polygon") {
             let polygonCoords = feature.geometry.coordinates[0];
             let perimeterLength = (turf.length(turf.lineString(polygonCoords))).toFixed(2);
@@ -186,17 +185,21 @@ $("document").ready(function () {
                   "</td></tr>"
             );
             }
+            //De-duplicates line ID and length array to push into final array which is tabulated in HTML
             lineLengthArray.push(lineId, lineLength);
             let uniqueLineLengthSet = new Set(lineLengthArray);
             let uniqueLineLengthArray = [...uniqueLineLengthSet];
             lineLengthsArray.push(uniqueLineLengthArray);
+            console.log(lineLengthsArray);
             $("#lineStatsTable>tbody>tr").remove();
             for (let k = 0; k <lineLengthsArray.length; k++) {
                 $("#lineStatsTable>tbody").append(
                 "<tr><td class='tableBorder'>" +
                   lineLengthsArray[k][0] + "<td class='tableBorder'>" +
                   lineLengthsArray[k][1] +"</td></tr>"
-            );
+                );
+                let noLines = k+1;
+                $("#lineCount").html(" " + noLines);
             }
           }        
         }
