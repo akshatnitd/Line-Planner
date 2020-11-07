@@ -93,12 +93,11 @@ $("document").ready(function () {
                 }
                 //Combined coordinates into a single array for the vertex. 
                 vertexLinesArray.push(vertexCoords);
-                console.log(vertexCoords);
                 //Pushes the combined coordinate as nested arrays within a master array for the boundary. 
             }
             linesArray.push(vertexLinesArray);  
-            console.log(vertexLinesArray);
-            console.log(linesArray);
+            //Call the function to delete any lines previously drawn or loaded.
+            deleteExistingLineFeatures();
             //Iterates through linesArray and filters by ID, returning an array for each individual line and converting this to GeoJSON before sending to mapbox Draw.
             for (let k = 0; k < linesArray[0].length; k++){
                 //Filter array by ID value

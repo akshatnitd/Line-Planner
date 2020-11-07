@@ -143,12 +143,32 @@ $("document").ready(function () {
       simEnter();
     }
 
+    //Delete existing line data function call from importCSV.js
+    window.deleteExistingLineFeatures = function () {
+        deleteExistingLines();
+    }
+
     //Draw imported Lines
     window.importedCsvLineToDraw = function (importedLine) {
       draw.add(importedLine);
       getLineString();
     };
 
+    //Function to delete old lines before drawing imported new ones
+    function deleteExistingLines(e) {
+      let data = draw.getAll();
+      let collectedFeatures = data.features;
+      //For of loop to only target Line Features and return the ID of the lines to then target these ID's deletion
+      function lineDeleteTarget() {
+        for (let feature of collectedFeatures) {
+          if (feature.geometry.type === "LineString") {
+            let lineToDeleteId = feature.id;
+            draw.delete(lineToDeleteId);
+          }
+        }
+      }
+      lineDeleteTarget();
+    }
     //Obtain Line Geometry
     map.on("draw.create", getLineString);
     map.on("draw.delete", getLineString);
