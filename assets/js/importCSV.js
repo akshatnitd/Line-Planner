@@ -96,9 +96,21 @@ $("document").ready(function () {
                 console.log(vertexCoords);
                 //Pushes the combined coordinate as nested arrays within a master array for the boundary. 
             }
-            linesArray.push(vertexLinesArray);
+            linesArray.push(vertexLinesArray);  
             console.log(vertexLinesArray);
             console.log(linesArray);
+            //Iterates through linesArray and filters by ID, returning an array for each individual line and converting this to GeoJSON before sending to mapbox Draw.
+            for (let k = 0; k < linesArray[0].length; k++){
+                //Filter array by ID value
+                let singleLine = linesArray[0].filter(function(id){
+                    return id[2] === k+1;
+                });
+                //If the array has values convert to GeoJSON and send to Mapbox Draw. 
+                if (singleLine.length > 0) {
+                    let lineStringToFeature = turf.lineString(singleLine);
+                    importedCsvLineToDraw(lineStringToFeature);
+                }
+            }
             //boundaryArrayToGeoJSON(linesArray);
         }
         //Creates GeoJSON Object from vertexBoundaryArray.

@@ -143,6 +143,12 @@ $("document").ready(function () {
       simEnter();
     }
 
+    //Draw imported Lines
+    window.importedCsvLineToDraw = function (importedLine) {
+      draw.add(importedLine);
+      getLineString();
+    };
+
     //Obtain Line Geometry
     map.on("draw.create", getLineString);
     map.on("draw.delete", getLineString);
