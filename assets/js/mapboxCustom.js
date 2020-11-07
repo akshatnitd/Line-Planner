@@ -170,6 +170,8 @@ $("document").ready(function () {
       function writeLineToTable() {
         $("#lineCoords>#lineTable>tbody>tr").remove();
         $("#lineStatsTable>tbody>tr").remove();
+        $("#lineCount").html(" ");
+        $("#lineDistance").html(" ");
         if (typeof lines !== "undefined") {
             let lineLengthsArray = [];
           for (let i = 0; i < lines.length; i++) {

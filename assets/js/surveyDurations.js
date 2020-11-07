@@ -61,10 +61,7 @@ $("document").ready(function(){
                 let turnDurationSecs = Math.round((turnDurationDecMinutes % 1)*60);
                 //Writes a HTML string for this computed turn duration.
                 $("#turnTotalTime").html(" " + turnDurationHours + " hrs " + turnDurationMinutes + " mins " + turnDurationSecs + " secs ");
-            } else {
-                //Alert if no survey lines are detected. 
-                alert("No lines to survey, draw some lines to get started!");
-            }
+            } else {}
         } else {
             //Alert if Est. time between lines is not a number. 
             alert("Turn time is not a number"); 
