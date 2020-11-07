@@ -191,7 +191,6 @@ $("document").ready(function () {
             let uniqueLineLengthSet = new Set(lineLengthArray);
             let uniqueLineLengthArray = [...uniqueLineLengthSet];
             lineLengthsArray.push(uniqueLineLengthArray);
-            console.log(lineLengthsArray);
             let lengthsToFloatArray = [];
             $("#lineStatsTable>tbody>tr").remove();
             for (let k = 0; k <lineLengthsArray.length; k++) {

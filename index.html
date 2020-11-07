@@ -35,6 +35,7 @@
 	<script type="text/javascript" src="assets/js/fileUploads.js"></script>
 	<script type="text/javascript" src="assets/js/importCSV.js"></script>
 	<script type="text/javascript" src="assets/js/exportCSV.js"></script>
+    <script type="text/javascript" src="assets/js/surveyDurations.js"></script>
 	<!--Jasmine Testing-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.js"
 		integrity="sha512-dqL4nYnbiMiNNy/V2zRK55QXSRVyu26KCuGoL8Zf5lDfKRRf8pBFW8RXe8at36QlB8s8bnOjKP6b5YTalHO6wQ=="
@@ -267,12 +268,14 @@
 						</table>
                         <p><strong>No. Lines :</strong><span id="lineCount"></span></p>
                         <p><strong>Total Survey Distance (km) :</strong><span id="lineDistance"></span></p>
-                        <form>
-                            <label for="surveySpeed">Survey Speed (m/s) :</label>
-                            <input type="text" id="surveySpeed" name="surveySpeed">
-                            <label for="turnTime">Est. Time Between Lines (mins) :</label>
-                            <input type="text" id="turnTime" name="turnTime">
-                        </form>
+                        <label for="surveySpeed">Survey Speed (m/s) :</label>
+                        <input type="text" id="surveySpeed" name="surveySpeed" value="0">
+                        <label for="turnTime">Est. Time Between Lines (mins) :</label>
+                        <input type="text" id="turnTime" name="turnTime">
+                        <button id="calcDurations" name="calcDurations">Calculate Survey Duration</button>
+                        <p><strong>Acquisition Time :</strong><span id="acqTime"></span></p>
+                        <p><strong>Turn Time :</strong><span id="turnTime"></span></p>
+                        <p><strong>Total Survey Duration :</strong><span id="totalTime"></span></p>
 					</div>
 				</div>
 			</div>
