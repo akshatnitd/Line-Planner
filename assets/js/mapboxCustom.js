@@ -45,7 +45,12 @@ $("document").ready(function () {
 
   map.on("load", function () {
     let draw = new MapboxDraw({
-      displayControlsDefault: true,
+      displayControlsDefault: false,
+      controls: {
+          polygon: true,
+          line_string: true,
+          trash: true,
+      }
     });
     document.getElementById("toolbar").appendChild(draw.onAdd(map));
 
