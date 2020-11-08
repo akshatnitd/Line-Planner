@@ -7,7 +7,7 @@ $("document").ready(function () {
     style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
     center: [-2.995859, 53.405974], // starting position [lng, lat]
     zoom: 11, // starting zoom
-    logoPosition: "top-right",
+    logoPosition: "bottom-left",
   });
   // Map type dropdown selector listener and setter
   $("#mapStyles").click(function setLayer() {

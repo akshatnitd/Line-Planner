@@ -41,10 +41,9 @@ header {
     top: 5vh;
 }
 
-.rightAlign {
+.fixedRightAlign {
     right: 0px;
 }
-
 
 /*Fonts and Text Sizing*/
 body, #mapStyle {
@@ -94,9 +93,14 @@ h3 {
     margin: 0;
 }
 
+.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
+    margin: 0;
+}
+
 #mapStyle {
-    margin: 0 0 0 3vw;
-    bottom: 7vh;
+    margin: 0;
+    bottom: 6vh;
+    left: 7vw;
 }
 
 .noBorder {
