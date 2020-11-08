@@ -258,23 +258,25 @@
 					</div>
 					<div id="lineStats" class="col">
 						<h4>Line Statistics</h4>
-						<table id="lineStatsTable">
-							<thead>
-								<th>Line ID</th>
-								<th>Line Length (km)</th>
-							</thead>
-							<tbody>
-							</tbody>
-						</table>
-                        <p class="bgGlassSmokeIncOpacity"><strong>No. Lines :</strong><span id="lineCount"></span></p>
+                        <div class="col centerAlign coordTableOverflow38vh">
+						    <table id="lineStatsTable" class="col-6 d-inline no-gutters no-padding fullWidth">
+							    <thead>
+								    <th class="tableBorder halfWidth">Line ID</th>
+								    <th class="tableBorder halfWidth">Line Length (km)</th>
+							    </thead>
+							    <tbody>
+							    </tbody>
+						    </table>
+                        </div>
+                        <p class="bgGlassSmokeIncOpacity marginTop"><strong>No. Lines :</strong><span id="lineCount"></span></p>
                         <p class="bgGlassSmokeIncOpacity"><strong>Total Survey Distance (km) :</strong><span id="lineDistance"></span></p>
                         <label for="surveySpeed">Survey Speed (m/s) :</label>
                         <input type="text" id="surveySpeed" name="surveySpeed" value="0">
                         <label for="turnTime">Est. Time Between Lines (mins) :</label>
                         <input type="text" id="turnTime" name="turnTime" value="0">
-                        <p id="recalcWarning" class="warning">Survey altered. Survey duration re-calculation required!</p>
-                        <button id="calcDurations" name="calcDurations">Calculate Survey Duration</button>
-                        <p class="bgGlassSmokeIncOpacity"><strong>Acquisition Time :</strong><span id="acqTotalTime"></span></p>
+                        <p id="recalcWarning" class="warning bgYellow">Survey altered. Survey duration re-calculation required!</p>
+                        <button id="calcDurations" name="calcDurations" class="bgDarkGrey fullWidth noBorder lightText">Calculate Survey Duration</button>
+                        <p class="bgGlassSmokeIncOpacity marginTop"><strong>Acquisition Time :</strong><span id="acqTotalTime"></span></p>
                         <p class="bgGlassSmokeIncOpacity"><strong>Turn Time :</strong><span id="turnTotalTime"></span></p>
                         <p class="bgGlassSmokeIncOpacity"><strong>Total Survey Duration :</strong><span id="totalTime"></span></p>
 					</div>

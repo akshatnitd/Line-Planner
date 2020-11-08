@@ -171,6 +171,11 @@ body {
     overflow: auto;
 }
 
+.coordTableOverflow38vh {
+    max-height: 38vh;
+    overflow: auto;
+}
+
 .height100 {
     height: 100%;
 }
@@ -237,6 +242,10 @@ footer {
     background: #148600;
 }
 
+.bgYellow {
+    background:#fcdd00;
+}
+
 #boundaryTable thead, #boundaryConverted thead {
     background: #006b9b;
 }
@@ -245,12 +254,32 @@ footer {
     background: #148600;
 }
 
+#lineStatsTable thead {
+    background: #373737;
+}
+
 #boundaryTable tbody tr:nth-child(even), #boundaryConverted tbody tr:nth-child(even) {
     background: #0099cc;
 }
 
 #boundaryTable tbody tr:nth-child(odd), #boundaryConverted tbody tr:nth-child(odd) {
     background: #5dcaff;
+}
+
+#lineTable tbody tr:nth-child(even), #lineConverted tbody tr:nth-child(even) {
+    background: #56b714;
+}
+
+#lineTable tbody tr:nth-child(odd), #lineConverted tbody tr:nth-child(odd) {
+    background: #8bea4f;
+}
+
+#lineStatsTable tbody tr:nth-child(even) {
+    background: #616161;
+}
+
+#lineStatsTable tbody tr:nth-child(odd) {
+    background: #8e8e8e;
 }
 
 /*Cursors*/
