@@ -110,13 +110,6 @@ $("document").ready(function () {
                     importedCsvLineToDraw(lineStringToFeature);
                 }
             }
-            //boundaryArrayToGeoJSON(linesArray);
         }
-        //Creates GeoJSON Object from vertexBoundaryArray.
-        /*function boundaryArrayToGeoJSON (polygonArray) {
-            importedBoundaryGeoJSON.geometry["coordinates"] = polygonArray;
-            importedBoundaryGeoJSON.geometry["type"] = "Polygon";
-            importedCsvBoundaryToDraw (importedBoundaryGeoJSON);
-        }*/
     });
 });
