@@ -306,3 +306,10 @@ footer {
     cursor: alias;
 }
 
+/*Button Interactivity*/
+#calcDurations:Hover, #calcDurations:Focus {
+    background: #fcdd00;
+    color: #ad001f;
+    font-weight: bold;
+}
+
