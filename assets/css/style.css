@@ -150,6 +150,30 @@ a:visited {
   color: #c4ac00;
 }
 
+/* --------- XXL and beyond Breakpoint----------- */
+@media (min-width: 2560px) {
+  body,
+  #mapStyle {
+    font-size: 1rem; /*143% large sizing*/
+  }
+
+  footer {
+    font-size: 1rem; /*143% large sizing*/
+  }
+
+  h3 {
+    font-size: 1.78rem; /*143% large sizing*/
+  }
+
+  h4 {
+    font-size: 1.43rem; /*143% large sizing*/
+  }
+
+  .mapboxgl-ctrl-scale {
+    font-size: 1.2rem;
+  }
+}
+
 /* --------- Less than Large Breakpoint----------- */
 @media (max-width: 991px) {
   body,
@@ -301,6 +325,23 @@ footer > div {
 #surveySpeed,
 #turnTime {
   width: 10%;
+}
+
+/* --------- XXL and beyond Breakpoint----------- */
+@media (min-width: 2560px) {
+  #logo img {
+    width: 15rem;
+  }
+
+  .coordTableOverflow {
+    max-height: 65%;
+    overflow: auto;
+  }
+
+  .coordTableOverflow40vh {
+    max-height: 52vh;
+    overflow: auto;
+  }
 }
 
 /* --------- Less than Extra Large Breakpoint----------- */
