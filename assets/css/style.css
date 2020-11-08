@@ -73,6 +73,12 @@ h3 {
     font-weight: 700;
 }
 
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 .warning {
     color: #ad001f;
     font-weight: bold;
@@ -171,8 +177,8 @@ body {
     overflow: auto;
 }
 
-.coordTableOverflow38vh {
-    max-height: 38vh;
+.coordTableOverflow40vh {
+    max-height: 40vh;
     overflow: auto;
 }
 
