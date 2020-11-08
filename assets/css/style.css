@@ -90,6 +90,19 @@ h4 {
     margin: 0;
 }
 
+a {
+    color: #8e8e8e;
+}
+
+a:hover {
+    color: #ffff53;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #c4ac00;
+}
+
 /*Padding, Margins and Borders*/
 .no-padding {
     padding: 0;
