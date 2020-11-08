@@ -3,6 +3,7 @@ $("document").ready(function () {
     importedBoundaryGeoJSON = {"type":"Feature", "properties":{}, "geometry":{"type":"", "coordinates":[]}};
     $("#boundarySubmit").click(function(){
         $("body").css("cursor", "progress");
+        $("#boundarySubmit").html("IMPORTING, Please Wait ...");
         //Assigns the chosen file to "csvInput" variable.
         function boundaryImport () {
             let csvInput = $("#boundaryFile")[0].files[0];
@@ -56,6 +57,7 @@ $("document").ready(function () {
     });
     $("#linesSubmit").click(function(){
         $("body").css("cursor", "progress");
+        $("#linesSubmit").html("IMPORTING, Please Wait ...");
         //Assigns the chosen file to "csvInput" variable.
         function linesImport () {
             let csvInput = $("#linesFile")[0].files[0];

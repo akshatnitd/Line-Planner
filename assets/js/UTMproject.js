@@ -118,6 +118,7 @@ $(document).ready(function () {
       }
       convertBoundaryTableArrayToUtm();
       $("body").css("cursor", "default");
+      $("#boundarySubmit").html("IMPORT");
     }
   });
 // Line Geodetics to UTM Projected Coordinates
@@ -174,6 +175,7 @@ $(document).ready(function () {
       }
       convertBoundaryTableArrayToUtm();
       $("body").css("cursor", "default");
+      $("#linesSubmit").html("IMPORT");
     }
   });
 });
