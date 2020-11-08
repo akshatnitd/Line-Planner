@@ -51,6 +51,14 @@ body,
   font-size: 0.7rem;
 }
 
+/* --------- Less than Medium Breakpoint----------- */
+@media (max-width: 767px) {
+  body,
+  #mapStyle {
+    font-size: 0.4rem;
+  }
+}
+
 .lightText {
   color: #f5f5f5;
 }
@@ -140,6 +148,12 @@ a:visited {
   margin-top: 2.5%;
 }
 
+
+#copyright, #position, #version {
+    margin: auto 0;
+}
+
+
 /*Sizing*/
 body {
   max-height: 100vh;
@@ -174,7 +188,6 @@ body {
   width: 25vw;
 }
 
-/*#boundaryInterface, #linesInterface,*/
 #rightInterface,
 #leftInterface,
 #leftInterfaceB {
@@ -204,11 +217,12 @@ body {
   height: 100%;
 }
 
-/* --------- Medium Breakpoint----------- */
-@media (min-width: 768px) {
-  footer {
-    height: 5vh;
-  }
+footer {
+  height: 5vh;
+}
+
+footer>div {
+    height: 100%;
 }
 
 #uploadBoundary,
@@ -219,6 +233,17 @@ body {
 #surveySpeed,
 #turnTime {
   width: 10%;
+}
+
+/* --------- Less than Medium Breakpoint----------- */
+@media (max-width: 767px) {
+  #map {
+    height: 94vh;
+  }
+
+  footer {
+    height: 6vh;
+  }
 }
 
 /*Backgrounds*/
