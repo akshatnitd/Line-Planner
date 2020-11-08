@@ -45,7 +45,7 @@ header {
 /*Fonts and Text Sizing*/
 body, #mapStyle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
 }
 
 .lightText {
