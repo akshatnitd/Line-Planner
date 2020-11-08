@@ -313,3 +313,15 @@ footer {
     font-weight: bold;
 }
 
+#boundarySubmit:hover, #boundarySubmit:focus, #boundaryExportGeo:hover, #boundaryExportGeo:focus, #boundaryExportProjected:hover, #boundaryExportProjected:focus {
+    background: #5dcaff;
+    color: #000000;
+    font-weight: bold;
+}
+
+#linesSubmit:hover, #linesSubmit:focus, #lineExportGeo:hover, #lineExportGeo:focus, #lineExportProjected:hover, #lineExportProjected:focus {
+    background: #8bea4f;
+    color: #000000;
+    font-weight: bold;
+}
+
