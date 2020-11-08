@@ -52,7 +52,11 @@ header {
 /* --------- Less than Extra Large Breakpoint----------- */
 @media (max-width: 1199px) {
   .fixedTop {
-    top: 7vh;
+    top: 6vh;
+  }
+  #mapStyle {
+    bottom: 6vh;
+    left: 11vw;
   }
 }
 
@@ -297,6 +301,35 @@ footer > div {
 #surveySpeed,
 #turnTime {
   width: 10%;
+}
+
+/* --------- Less than Extra Large Breakpoint----------- */
+@media (max-width: 1199px) {
+  .interfaceHeight {
+    height: 82vh;
+  }
+
+  .interfaceWidth {
+    width: 47vw;
+  }
+
+  #boundaryHead,
+  #linesHead {
+    height: 41vh;
+  }
+
+  #statsHead {
+    height: 82vh;
+  }
+  .coordTableOverflow {
+    max-height: 45%;
+    overflow: auto;
+  }
+
+  .coordTableOverflow40vh {
+    max-height: 30vh;
+    overflow: auto;
+  }
 }
 
 /* --------- Less than Large Breakpoint----------- */
