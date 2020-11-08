@@ -131,15 +131,19 @@ a:visited {
 @media (max-width: 767px) {
   body,
   #mapStyle {
+    font-size: 0.55rem; /*78% large sizing*/
+  }
+
+  footer {
     font-size: 0.4rem; /*57% large sizing*/
   }
 
   h3 {
-    font-size: 0.71rem; /*57% large sizing*/
+    font-size: 0.9rem; /*72% large sizing*/
   }
 
   h4 {
-    font-size: 0.57rem; /*57% large sizing*/
+    font-size: 0.72rem; /*72% large sizing*/
   }
 
   .mapboxgl-ctrl-scale {
@@ -296,6 +300,16 @@ footer > div {
 
   .mapboxgl-ctrl-scale {
     height: 2.5vh;
+  }
+
+  .coordTableOverflow {
+    max-height: 48%;
+    overflow: auto;
+  }
+
+  .coordTableOverflow40vh {
+    max-height: 30vh;
+    overflow: auto;
   }
 }
 
