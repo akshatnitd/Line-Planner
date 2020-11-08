@@ -108,7 +108,7 @@ $("document").ready(function () {
           if (feature.geometry.type === "Polygon") {
             let polygonCoords = feature.geometry.coordinates[0];
             let perimeterLength = (turf.length(turf.lineString(polygonCoords))).toFixed(2);
-            $("#boundaryStatData").html(`<p id="boundaryArea"><strong>Boundary Area (km) : </strong>` + "" + areaKm + `</p><p id="boundaryPerimeter"><strong>Boundary Perimeter Length (km) : </strong>` + "" + perimeterLength + `</p>`);
+            $("#boundaryStatData").html(`<p id="boundaryArea" class="bgGlassSmokeIncOpacity"><strong>Boundary Area (km) : </strong>` + "" + areaKm + `</p><p id="boundaryPerimeter" class="bgGlassSmokeIncOpacity"><strong>Boundary Perimeter Length (km) : </strong>` + "" + perimeterLength + `</p>`);
             return polygonCoords;
           }
         }
