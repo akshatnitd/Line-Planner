@@ -49,6 +49,25 @@ header {
   left: 7vw;
 }
 
+/* --------- Less than Extra Large Breakpoint----------- */
+@media (max-width: 1199px) {
+  .fixedTop {
+    top: 7vh;
+  }
+}
+
+/* --------- Less than Large Breakpoint----------- */
+@media (max-width: 991px) {
+  .fixedTop {
+    top: 5vh;
+  }
+
+  #mapStyle {
+    bottom: 6vh;
+    left: 15vw;
+  }
+}
+
 /* --------- Less than Medium Breakpoint----------- */
 @media (max-width: 767px) {
   .fixedTop {
@@ -125,6 +144,14 @@ a:hover {
 
 a:visited {
   color: #c4ac00;
+}
+
+/* --------- Less than Large Breakpoint----------- */
+@media (max-width: 991px) {
+  body,
+  #mapStyle {
+    font-size: 0.6rem; /*86% large sizing*/
+  }
 }
 
 /* --------- Less than Medium Breakpoint----------- */
@@ -272,6 +299,22 @@ footer > div {
   width: 10%;
 }
 
+/* --------- Less than Large Breakpoint----------- */
+@media (max-width: 991px) {
+  .interfaceWidth {
+    width: 46vw;
+  }
+
+  .coordTableOverflow {
+    max-height: 65%;
+    overflow: auto;
+  }
+
+  .coordTableOverflow40vh {
+    max-height: 48vh;
+    overflow: auto;
+  }
+}
 /* --------- Less than Medium Breakpoint----------- */
 @media (max-width: 767px) {
   #map {
@@ -287,7 +330,7 @@ footer > div {
   }
 
   .interfaceWidth {
-    width: 90vw;
+    width: 88vw;
   }
   #boundaryHead,
   #linesHead {
