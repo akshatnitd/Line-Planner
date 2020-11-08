@@ -44,19 +44,34 @@ header {
   right: 0px;
 }
 
+#mapStyle {
+  bottom: 6vh;
+  left: 7vw;
+}
+
+/* --------- Less than Medium Breakpoint----------- */
+@media (max-width: 767px) {
+  .fixedTop {
+    top: 7vh;
+  }
+
+  #mapStyle {
+    bottom: 7vh;
+    left: 26vw;
+  }
+
+  .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
+      position: fixed;
+      bottom: 7vh;
+      right: 1vw;
+  }
+}
+
 /*Fonts and Text Sizing*/
 body,
 #mapStyle {
   font-family: "Montserrat", sans-serif;
   font-size: 0.7rem;
-}
-
-/* --------- Less than Medium Breakpoint----------- */
-@media (max-width: 767px) {
-  body,
-  #mapStyle {
-    font-size: 0.4rem;
-  }
 }
 
 .lightText {
@@ -112,6 +127,22 @@ a:visited {
   color: #c4ac00;
 }
 
+/* --------- Less than Medium Breakpoint----------- */
+@media (max-width: 767px) {
+  body,
+  #mapStyle {
+    font-size: 0.4rem; /*57% large sizing*/
+  }
+
+  h3 {
+    font-size: 0.71rem; /*57% large sizing*/
+  }
+
+  h4 {
+    font-size: 0.57rem; /*57% large sizing*/
+  }
+}
+
 /*Padding, Margins and Borders*/
 .no-padding {
   padding: 0;
@@ -127,8 +158,6 @@ a:visited {
 
 #mapStyle {
   margin: 0;
-  bottom: 6vh;
-  left: 7vw;
 }
 
 .noBorder {
@@ -148,11 +177,11 @@ a:visited {
   margin-top: 2.5%;
 }
 
-
-#copyright, #position, #version {
-    margin: auto 0;
+#copyright,
+#position,
+#version {
+  margin: auto 0;
 }
-
 
 /*Sizing*/
 body {
@@ -221,8 +250,8 @@ footer {
   height: 5vh;
 }
 
-footer>div {
-    height: 100%;
+footer > div {
+  height: 100%;
 }
 
 #uploadBoundary,
@@ -243,6 +272,22 @@ footer>div {
 
   footer {
     height: 6vh;
+  }
+
+  .interfaceHeight {
+    height: 82vh;
+  }
+
+  .interfaceWidth {
+    width: 90vw;
+  }
+  #boundaryHead,
+  #linesHead {
+    height: 41vh;
+  }
+
+  #statsHead {
+    height: 82vh;
   }
 }
 
