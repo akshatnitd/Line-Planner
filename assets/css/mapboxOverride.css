@@ -1,18 +1,26 @@
-.mapboxgl-ctrl-top-left, .mapboxgl-ctrl-top-right {
-    top: 4vh;
-    left: 0;
+.mapboxgl-ctrl-top-left,
+.mapboxgl-ctrl-top-right {
+  top: 4vh;
+  left: 0;
 }
 
 #toolbar .mapboxgl-ctrl-group button {
-    display: inline-block;
-    width: 5vw;
-    height: 100%;
-    border-top: none;
+  display: inline-block;
+  width: 6.5vw;
+  height: 100%;
+  border-top: none;
 }
 
 #toolbar .mapboxgl-ctrl-group {
-    display: inline-block;
-    background: transparent;
-    height: 100%;
-    box-shadow: none;
+  display: inline-block;
+  background: transparent;
+  height: 100%;
+  box-shadow: none;
+}
+
+/* --------- Less than Medium Breakpoint----------- */
+@media (max-width: 767px) {
+  #toolbar .mapboxgl-ctrl-group button {
+    width: 9.5vw;
+  }
 }

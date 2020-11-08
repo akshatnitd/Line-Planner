@@ -61,9 +61,9 @@ header {
   }
 
   .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
-      position: fixed;
-      bottom: 7vh;
-      right: 1vw;
+    position: fixed;
+    bottom: 7vh;
+    right: 1vw;
   }
 }
 
@@ -140,6 +140,10 @@ a:visited {
 
   h4 {
     font-size: 0.57rem; /*57% large sizing*/
+  }
+
+  .mapboxgl-ctrl-scale {
+    font-size: 0.5rem;
   }
 }
 
@@ -288,6 +292,10 @@ footer > div {
 
   #statsHead {
     height: 82vh;
+  }
+
+  .mapboxgl-ctrl-scale {
+    height: 2.5vh;
   }
 }
 
