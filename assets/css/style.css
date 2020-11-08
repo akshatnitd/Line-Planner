@@ -207,6 +207,10 @@ footer {
     padding: 5%;
 }
 
+#surveySpeed, #turnTime {
+    width: 10%;
+}
+
 /*Backgrounds*/
 .bgGlassSmoke {
     background-image: linear-gradient(135deg, rgba(142,142,142,0.5), rgba(55,55,55,0.75), rgba(97,97,97,0.75));
