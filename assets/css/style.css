@@ -41,6 +41,10 @@ header {
     top: 5vh;
 }
 
+.rightAlign {
+    right: 0px;
+}
+
 
 /*Fonts and Text Sizing*/
 body, #mapStyle {
